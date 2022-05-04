@@ -1,0 +1,52 @@
+{
+  "navigation": {
+    "N1": "Bakery",
+    "N2": "Menu",
+    "N3": "Map",
+    "N4": "Contact"
+  },
+
+  "home": {
+    "title": "Sucré Salé | French Bakery Cozumel",
+    "T1": "Sucré Salé",
+    "T2": "The most delicious on the island!",
+    "T3": "Welcome!",
+    "T4": "We are a French family restaurant with a wide repertoire of desserts and delicious dishes.",
+    "B1": "See menu",
+    "B2": "Book a table",
+    "T5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "T6": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "T7": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+
+  "menu": {
+    "title": "Menu | Sucré Salé | French Bakery Cozumel",
+    "M1": "Our Menu",
+    "M2": "Comida de Calidad con un Toque Hogareño Con el toque francés y un toque de amor logramos traerte un pedacito de Francia en tu paladar. Ten una experiencia única y atrévete a probar nuestras delicias.",
+    "M3": "French Breakfast",
+    "M4": "Mexican Breakfast",
+    "M5": "Empanadas",
+    "M6": "Savory Crepes",
+    "M7": "Sweet Crepes",
+    "M8": "Desserts",
+    "M9": "Bread Delicatesse",
+    "M10": "Coffee Delights",
+    "M11": "French Specialities"
+  },
+
+  "map": {
+    "title": "Map | Sucré Salé | French Bakery Cozumel",
+    "T1": "French Bakery Cozumel"
+  },
+
+  "contact": {
+    "title": "Contact | Sucré Salé | French Bakery Cozumel",
+    "T1": "Contact",
+    "T2": "Please leave any suggestions or feedback, it is always very welcome. We are excited to hear from you!",
+    "T3": "This picture was taken during a heavy storm, celebrating the cosiness inside our café.",
+    "T4": "Name",
+    "T5": "Email",
+    "T6": "Message",
+    "T7": "Submit"
+  }
+}

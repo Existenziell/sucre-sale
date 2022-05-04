@@ -1,15 +1,24 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import langEN from '../i18n/en.json'
+import langES from '../i18n/es.json'
 
 const Nav = () => {
     const router = useRouter()
     const [isOpen, setIsOpen] = useState(false)
 
+    const { locale } = useRouter();
+
+    let i18n
+    locale === 'es' ?
+        i18n = langES.navigation :
+        i18n = langEN.navigation
+
     const urls = [
-        { name: 'Bakery', url: '/', title: 'Bakery' },
-        { name: 'Menu', url: '/menu', title: 'Menu' },
-        { name: 'Map', url: '/map', title: 'Map' },
-        { name: 'Contact', url: '/contact', title: 'Contact' },
+        { name: i18n.N1, url: '/', title: i18n.N1 },
+        { name: i18n.N2, url: '/menu', title: i18n.N2 },
+        { name: i18n.N3, url: '/map', title: i18n.N3 },
+        { name: i18n.N4, url: '/contact', title: i18n.N4 },
     ]
 
     const intercept = (e) => {

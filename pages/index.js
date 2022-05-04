@@ -1,43 +1,56 @@
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
+import langEN from '../i18n/en.json'
+import langES from '../i18n/es.json'
 
-const Root = () => {
+const Home = ({ i18n }) => {
+
   return (
     <>
       <Head>
-        <title>Home | Sucré Salé - French Bakery Cozumel</title>
+        <title>{i18n.title}</title>
       </Head>
 
       <header className='flex items-center justify-center h-screen sm:bg-fixed bg-center bg-cover bg-parallax-1'>
         <a href='#anchor' aria-label='Scroll down'>
           <h1 className='p-5 text-6xl text-white bg-brand bg-opacity-70 dark:bg-brand-dark rounded'>
-            Sucré Salé
+            {i18n.T1}
           </h1>
         </a>
       </header>
 
       <div className='max-w-xl m-auto px-4 leading-relaxed my-16' id='anchor'>
-        <p>¡Lo más delicioso en la isla!</p>
-        <h2 className='text-6xl my-8'>¡Bienvenido!</h2>
-        <p>Somos un restaurante familiar francés con un amplio repertorio de postres y deliciosos platillos.</p>
-        <Link href='/menu'><a className='button inline-block mr-6'>See Menu</a></Link>
-        <Link href='/contact'><a className='button inline-block'>Book a table</a></Link>
+        <p>{i18n.T2}</p>
+        <h2 className='text-6xl my-8'>{i18n.T3}</h2>
+        <p>{i18n.T4}</p>
+        <Link href='/menu'><a className='button inline-block mr-6'>{i18n.B1}</a></Link>
+        <Link href='/contact'><a className='button inline-block'>{i18n.B2}</a></Link>
         <Image src='/bakery/variado.jpg' width={706} height={960} alt='Variado' priority={true} />
-        <p className='mt-8 leading-loose'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p className='mt-8 leading-loose'>{i18n.T5}</p>
       </div>
 
       <section className='flex items-center justify-center h-screen mb-12 sm:bg-fixed bg-center bg-cover bg-parallax-2'>
-        <Link href='/menu'><a className='button mr-6'>See Menu</a></Link>
-        <Link href='/contact'><a className='button'>Book a table</a></Link>
+        <Link href='/menu'><a className='button mr-6'>{i18n.B1}</a></Link>
+        <Link href='/contact'><a className='button'>{i18n.B2}</a></Link>
       </section>
 
-      <p className='text-lg my-8 max-w-xl mx-auto leading-loose'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p className='text-lg my-8 max-w-xl mx-auto leading-loose'>{i18n.T6}</p>
       <Image src='/bakery/pano1.jpg' width={600} height={238} alt='Panoramic' priority={true} />
-      <p className='mt-8 pb-16'>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p className='mt-8 pb-16'>{i18n.T7}</p>
 
     </>
   )
 }
 
-export default Root
+export async function getStaticProps(context) {
+  let i18n
+  context.locale === 'en' ?
+    i18n = langEN.home :
+    i18n = langES.home
+  return {
+    props: { i18n },
+  }
+}
+
+export default Home

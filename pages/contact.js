@@ -4,8 +4,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Social from '../components/Social'
 import PacmanLoader from 'react-spinners/PacmanLoader'
+import langEN from '../i18n/en.json'
+import langES from '../i18n/es.json'
 
-const Contact = () => {
+const Contact = ({ i18n }) => {
+
   const [formData, setFormData] = useState()
   const [sending, setSending] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
@@ -59,21 +62,17 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Contact | Sucré Salé</title>
+        <title>{i18n.title}</title>
       </Head>
 
       <div className='flex flex-col items-center justify-center px-4 md:px-8 py-24 lg:w-2/3 lg:mx-auto'>
-        <h1 className='text-6xl mb-12'>Contact</h1>
+        <h1 className='text-6xl mb-12'>{i18n.T1}</h1>
         <div className='md:flex items-center gap-8 md:text-right'>
           <div className='md:w-2/3'>
-            <p className='text-lg leading-relaxed mb-8'>
-              Please leave any suggestions or feedback, it is always very welcome.
-              We are excited to hear from you!{' '}
-            </p>
-            <p className='text-sm leading-relaxed mb-8'>
-              This picture was taken during a heavy storm, celebrating the cosiness inside our café.</p>
+            <p className='text-lg leading-relaxed mb-8'>{i18n.T2}</p>
+            <p className='text-sm leading-relaxed mb-8'>{i18n.T3}</p>
           </div>
-          <Image src='/icons/contact.jpg' alt='Contact' width={800} height={533} priority={true} />
+          <Image src='/icons/contact.jpg' alt={i18n.T1} width={800} height={528} priority={true} />
         </div>
 
         <Social />
@@ -91,25 +90,25 @@ const Contact = () => {
               </div>
             }
             <div className='relative mb-8'>
-              <input id='name' name='name' type='text' onChange={setData} required disabled={sending} className='peer h-10 w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded pl-4' placeholder='Name' />
+              <input id='name' name='name' type='text' onChange={setData} required disabled={sending} className='peer h-10 w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded pl-4' placeholder={i18n.T4} />
               <label htmlFor='name'
                 className='absolute -top-5 left-0 text-sm transition-all
                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-placeholder-shown:left-4
-                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-gray-300 peer-focus:text-sm'>Name</label>
+                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-gray-300 peer-focus:text-sm'>{i18n.T4}</label>
             </div>
             <div className='relative mb-8'>
-              <input id='email' type='email' name='email' onChange={setData} required disabled={sending} className='peer h-10 w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded pl-4' placeholder='Email' />
+              <input id='email' type='email' name='email' onChange={setData} required disabled={sending} className='peer h-10 w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded pl-4' placeholder={i18n.T5} />
               <label htmlFor='email'
                 className='absolute -top-5 left-0 text-sm transition-all
                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-placeholder-shown:left-4
-                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-gray-300 peer-focus:text-sm'>Email</label>
+                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-gray-300 peer-focus:text-sm'>{i18n.T5}</label>
             </div>
             <div className='relative'>
-              <textarea id='message' name='message' onChange={setData} rows='10' required disabled={sending} className='peer h-full w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded pl-4 py-4' placeholder='Message'></textarea>
+              <textarea id='message' name='message' onChange={setData} rows='10' required disabled={sending} className='peer h-full w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded pl-4 py-4' placeholder={i18n.T6}></textarea>
               <label htmlFor='message'
                 className='absolute -top-5 left-0 text-sm transition-all
                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-placeholder-shown:left-4
-                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-gray-300 peer-focus:text-sm'>Message</label>
+                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-gray-300 peer-focus:text-sm'>{i18n.T6}</label>
             </div>
 
             {errorMsg ?
@@ -122,13 +121,23 @@ const Contact = () => {
                   <PacmanLoader color={'white'} size={30} />
                 </div>
                 :
-                <input type='submit' className='button' aria-label='Send Contact Form'></input>
+                <input type='submit' className='button' aria-label='Send Contact Form' value={i18n.T7}></input>
             }
           </form>
         </div>
       </div>
     </>
   )
+}
+
+export async function getStaticProps(context) {
+  let i18n
+  context.locale === 'en' ?
+    i18n = langEN.contact :
+    i18n = langES.contact
+  return {
+    props: { i18n },
+  }
 }
 
 export default Contact

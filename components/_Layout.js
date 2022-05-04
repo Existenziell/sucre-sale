@@ -10,7 +10,14 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <NextNprogress startPosition={0.3} stopDelayMs={100} height={3} showOnShallow={true} color='var(--color-brand)' />
+      <NextNprogress
+        height={3}
+        startPosition={0.3}
+        stopDelayMs={100}
+        showOnShallow={true}
+        color='var(--color-brand)'
+        options={{ showSpinner: false }}
+      />
       <Nav />
       <DarkModeToggle />
 
