@@ -8,8 +8,8 @@ const Success = () => {
         <title>Success! | Sucré Salé</title>
       </Head>
 
-      <div className='flex flex-col items-center justify-center h-screen text-center text-3xl text-brand'>
-        <h1>Thank you!</h1>
+      <div className='flex flex-col items-center justify-center h-screen text-brand'>
+        <h1 className='text-6xl'>Thank you!</h1>
         <Link href='/'>
           <a>
             <svg xmlns='http://www.w3.org/2000/svg' className='h-32 w-32 text-brand hover:scale-105 transition-all' viewBox='0 0 20 20' fill='currentColor'>
@@ -17,6 +17,12 @@ const Success = () => {
             </svg>
           </a>
         </Link>
+
+        <div className='flex'>
+          <Link href='/'><a className='button mr-6'>Bakery</a></Link>
+          <Link href='/menu'><a className='button'>Menu</a></Link>
+        </div>
+
       </div>
     </>
   )
