@@ -1,0 +1,28 @@
+{
+  "name": "sucre-sale",
+  "author": "Christof Bauer <bauer.christof@gmail.com> (http://christof.digital/)",
+  "version": "0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
+    "framer-motion": "^5.4.5",
+    "mapbox-gl": "^2.6.0",
+    "next": "latest",
+    "nextjs-progressbar": "^0.0.14",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-facebook": "^8.1.4",
+    "react-intersection-observer": "^8.33.0",
+    "react-spinners": "^0.11.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^3.0.1"
+  }
+}
