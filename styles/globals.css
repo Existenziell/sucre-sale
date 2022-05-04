@@ -42,11 +42,11 @@ html, body {
 }
 
 ::selection {
-  @apply text-brand-dark;
+  @apply text-brand bg-brand-dark;
 }
 
 ::-moz-selection {
-  @apply text-brand-dark;
+  @apply text-blue-800;
 }
 
 h1, h2 {
