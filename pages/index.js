@@ -14,7 +14,7 @@ const Home = ({ i18n }) => {
 
       <header className='flex items-center justify-center h-screen sm:bg-fixed bg-center bg-cover bg-parallax-1'>
         <a href='#anchor' aria-label='Scroll down'>
-          <h1 className='p-5 text-6xl text-white bg-brand bg-opacity-70 dark:bg-brand-dark rounded'>
+          <h1 className='px-6 py-4 text-6xl text-white bg-brand/80 dark:text-brand dark:bg-brand-dark/80 rounded'>
             {i18n.T1}
           </h1>
         </a>
@@ -24,17 +24,19 @@ const Home = ({ i18n }) => {
         <p>{i18n.T2}</p>
         <h2 className='text-6xl my-8'>{i18n.T3}</h2>
         <p>{i18n.T4}</p>
-        <Link href='/menu'><a className='button inline-block mr-6'>{i18n.B1}</a></Link>
-        <Link href='/contact'><a className='button inline-block'>{i18n.B2}</a></Link>
-        {/* <div className='image-wrapper shadow-lg rounded'> */}
+        <div className='my-8'>
+          <Link href='/menu'><a className='button inline-block sm:mr-6'>{i18n.B1}</a></Link>
+          <Link href='/contact'><a className='button inline-block mt-4'>{i18n.B2}</a></Link>
+        </div>
         <img src='/bakery/variado.jpg' alt='Variado' className='rounded-lg shadow' />
-        {/* </div> */}
         <p className='mt-8 leading-loose'>{i18n.T5}</p>
       </div>
 
       <section className='flex items-center justify-center h-screen mb-12 sm:bg-fixed bg-center bg-cover bg-parallax-2'>
-        <Link href='/menu'><a className='button mr-6'>{i18n.B1}</a></Link>
-        <Link href='/contact'><a className='button'>{i18n.B2}</a></Link>
+        <p className='w-full px-6 py-8 text-white bg-brand-dark/80 rounded'>
+          <Link href='/menu'><a className='button inline-block mr-6 '>{i18n.B1}</a></Link>
+          <Link href='/contact'><a className='button inline-block'>{i18n.B2}</a></Link>
+        </p>
       </section>
 
       <div className='flex flex-col items-center justify-center'>

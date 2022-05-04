@@ -121,7 +121,7 @@ const Contact = ({ i18n }) => {
                   <PacmanLoader color={'white'} size={30} />
                 </div>
                 :
-                <input type='submit' className='button' aria-label='Send Contact Form' value={i18n.T7}></input>
+                <input type='submit' className='button my-4' aria-label='Send Contact Form' value={i18n.T7}></input>
             }
           </form>
         </div>
