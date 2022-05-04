@@ -63,6 +63,7 @@ const Contact = ({ i18n }) => {
     <>
       <Head>
         <title>{i18n.title}</title>
+        <meta name='description' content={i18n.desc} />
       </Head>
 
       <div className='flex flex-col items-center justify-center px-4 md:px-8 py-24 lg:w-2/3 lg:mx-auto'>

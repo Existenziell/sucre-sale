@@ -8,6 +8,7 @@
 
   "home": {
     "title": "Sucré Salé | Panadería Francesa Cozumel",
+    "desc": "Somos un restaurante familiar francés con un amplio repertorio de postres y deliciosos platillos",
     "T1": "Sucré Salé",
     "T2": "¡Lo más delicioso en la isla!",
     "T3": "¡Bienvenido!",
@@ -21,8 +22,10 @@
 
   "menu": {
     "title": "Menú | Sucré Salé | Panadería Francesa Cozumel",
+    "desc": "Degusta nuestro amplio repertorio de postres franceses y mexicanos y deliciosos platillos",
     "M1": "Nuestro Menú",
-    "M2": "Comida de Calidad con un Toque Hogareño Con el toque francés y un toque de amor logramos traerte un pedacito de Francia en tu paladar. Ten una experiencia única y atrévete a probar nuestras delicias.",
+    "M2a": "Comida de Calidad con un Toque Hogareño",
+    "M2b": "Con el toque francés y un toque de amor logramos traerte un pedacito de Francia en tu paladar. Ten una experiencia única y atrévete a probar nuestras delicias.",
     "M3": "French Breakfast",
     "M4": "Mexican Breakfast",
     "M5": "Empanadas",
@@ -36,11 +39,13 @@
 
   "map": {
     "title": "Mapa | Sucré Salé | Panadería Francesa Cozumel",
+    "desc": "Dónde y cómo encontrarnos.",
     "T1": "Panadería Francesa Cozumel"
   },
 
   "contact": {
     "title": "Contacto | Sucré Salé | Panadería Francesa Cozumel",
+    "desc": "Contacto | Sucré Salé | Panadería Francesa Cozumel",
     "T1": "Contacto",
     "T2": "Por favor, deje cualquier sugerencia o comentario, siempre es muy bienvenido. ¡Estamos muy contentos de saber de ti!",
     "T3": "Esta foto fue tomada durante una fuerte tormenta, celebrando la calidez dentro de nuestro café.",
@@ -48,5 +53,13 @@
     "T5": "Correo electrónico",
     "T6": "Messaje",
     "T7": "Enviar"
+  },
+
+  "success": {
+    "title": "Éxito | Sucré Salé | Panadería Francesa Cozumel",
+    "desc": "Éxito | Sucré Salé | Panadería Francesa Cozumel",
+    "T1": "Muchas gracias!",
+    "B1": "Panadería",
+    "B2": "Menú"
   }
 }

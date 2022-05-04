@@ -10,6 +10,7 @@ const Home = ({ i18n }) => {
     <>
       <Head>
         <title>{i18n.title}</title>
+        <meta name='description' content={i18n.desc} />
       </Head>
 
       <header className='flex items-center justify-center h-screen sm:bg-fixed bg-center bg-cover bg-parallax-1'>
