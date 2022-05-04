@@ -73,7 +73,7 @@ const Contact = () => {
             <p className='text-sm leading-relaxed mb-8'>
               This picture was taken during a heavy storm, celebrating the cosiness inside our café.</p>
           </div>
-          <Image src='/icons/contact.jpg' alt='Contact' width={400} height={266} priority={true} />
+          <Image src='/icons/contact.jpg' alt='Contact' width={800} height={533} priority={true} />
         </div>
 
         <Social />
