@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import langEN from '../i18n/en.json'
 import langES from '../i18n/es.json'
 
@@ -20,33 +19,33 @@ const Menu = ({ i18n }) => {
 
         <div className='flex flex-col items-center'>
           <h3 className='text-xl mb-2 mt-12'>{i18n.M3}</h3>
-          <img src='/menu/breakfast-french.jpg' alt='breakfast' width={500} className='mb-4' />
-          <img src='/menu/breakfast-french2.jpg' alt='breakfast' width={500} />
+          <img src='/menu/breakfast-french.jpg' alt='breakfast' width={500} className='rounded shadow mb-4' />
+          <img src='/menu/breakfast-french2.jpg' alt='breakfast' width={500} className='rounded shadow' />
 
           <h3 className='text-xl mb-2 mt-12'>{i18n.M4}</h3>
-          <img src='/menu/breakfast-mex.jpg' alt='breakfast' width={500} />
+          <img src='/menu/breakfast-mex.jpg' alt='breakfast' width={500} className='rounded shadow' />
 
           <h3 className='text-xl mb-2 mt-12'>{i18n.M5}</h3>
-          <img src='/menu/empanada.jpg' alt='empanadas' width={500} />
+          <img src='/menu/empanada.jpg' alt='empanadas' width={500} className='rounded shadow' />
 
           <h3 className='text-xl mb-2 mt-12'>{i18n.M6}</h3>
-          <img src='/menu/crepes-savory.jpg' alt='crepes_savory' width={500} />
+          <img src='/menu/crepes-savory.jpg' alt='crepes_savory' width={500} className='rounded shadow' />
 
           <h3 className='text-xl mb-2 mt-12'>{i18n.M7}</h3>
-          <img src='/menu/crepes.jpg' alt='crepes' width={500} />
+          <img src='/menu/crepes.jpg' alt='crepes' width={500} className='rounded shadow' />
 
           <h3 className='text-xl mb-2 mt-12'>{i18n.M8}</h3>
-          <img src='/menu/pasteles.png' alt='pasteles' width={500} />
+          <img src='/menu/pasteles.png' alt='pasteles' width={500} className='rounded shadow' />
 
           <h3 className='text-xl mb-2 mt-12'>{i18n.M9}</h3>
-          <img src='/menu/bread.jpg' alt='bread' width={500} className='mb-4' />
+          <img src='/menu/bread.jpg' alt='bread' width={500} className='rounded shadow mb-4' />
 
           <h3 className='text-xl mb-2 mt-12'>{i18n.M10}</h3>
-          <img src='/menu/coffee.jpg' alt='coffee' width={500} />
+          <img src='/menu/coffee.jpg' alt='coffee' width={500} className='rounded shadow' />
 
           <h3 className='text-xl mb-2 mt-12'>{i18n.M11}</h3>
-          <img src='/menu/specialities.jpg' alt='specialities' width={500} className='mb-4' />
-          <img src='/menu/specialities2.jpg' alt='specialities' width={500} />
+          <img src='/menu/specialities.jpg' alt='specialities' width={500} className='rounded shadow mb-4' />
+          <img src='/menu/specialities2.jpg' alt='specialities' width={500} className='rounded shadow' />
 
         </div>
       </div>

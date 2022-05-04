@@ -25,6 +25,13 @@ email: bauer.christof@gmail.com
   }
 }
 
+/* Counter bug in nextjs Image component - images are rendered with whitespace below
+https://github.com/vercel/next.js/issues/21914 */
+.image-wrapper {
+  display: relative;
+  text-align: bottom;
+  font-size: 0;
+}
 
 /* ==========================================================================
 	General overrides and utilities
@@ -35,11 +42,11 @@ html, body {
 }
 
 ::selection {
-  @apply text-brand;
+  @apply text-brand-dark;
 }
 
 ::-moz-selection {
-  @apply text-brand;
+  @apply text-brand-dark;
 }
 
 h1, h2 {

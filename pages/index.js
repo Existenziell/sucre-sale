@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import langEN from '../i18n/en.json'
@@ -27,7 +26,9 @@ const Home = ({ i18n }) => {
         <p>{i18n.T4}</p>
         <Link href='/menu'><a className='button inline-block mr-6'>{i18n.B1}</a></Link>
         <Link href='/contact'><a className='button inline-block'>{i18n.B2}</a></Link>
-        <Image src='/bakery/variado.jpg' width={706} height={960} alt='Variado' priority={true} />
+        {/* <div className='image-wrapper shadow-lg rounded'> */}
+        <img src='/bakery/variado.jpg' alt='Variado' className='rounded-lg shadow' />
+        {/* </div> */}
         <p className='mt-8 leading-loose'>{i18n.T5}</p>
       </div>
 
@@ -36,9 +37,11 @@ const Home = ({ i18n }) => {
         <Link href='/contact'><a className='button'>{i18n.B2}</a></Link>
       </section>
 
-      <p className='text-lg my-8 max-w-xl mx-auto leading-loose'>{i18n.T6}</p>
-      <Image src='/bakery/pano1.jpg' width={600} height={238} alt='Panoramic' priority={true} />
-      <p className='mt-8 pb-16'>{i18n.T7}</p>
+      <div className='flex flex-col items-center justify-center'>
+        <p className='text-lg my-8 max-w-xl mx-auto leading-loose'>{i18n.T6}</p>
+        <img src='/bakery/pano1.jpg' alt='Panoramic' className='rounded shadow' />
+        <p className='mt-8 pb-16'>{i18n.T7}</p>
+      </div>
 
     </>
   )

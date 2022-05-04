@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import Router, { useRouter } from 'next/router'
 import Head from 'next/head'
-import Image from 'next/image'
 import Social from '../components/Social'
 import PacmanLoader from 'react-spinners/PacmanLoader'
 import langEN from '../i18n/en.json'
@@ -70,10 +69,10 @@ const Contact = ({ i18n }) => {
         <h1 className='text-6xl mb-12'>{i18n.T1}</h1>
         <div className='md:flex items-center gap-8 md:text-right'>
           <div className='md:w-2/3'>
-            <p className='text-lg leading-relaxed mb-8'>{i18n.T2}</p>
-            <p className='text-sm leading-relaxed mb-8'>{i18n.T3}</p>
+            <p className='text-lg leading-relaxed mb-8 max-w-sm'>{i18n.T2}</p>
+            <p className='hidden md:block text-sm leading-relaxed mb-8'>{i18n.T3}</p>
           </div>
-          <Image src='/icons/contact.jpg' alt={i18n.T1} width={800} height={528} priority={true} />
+          <img src='/icons/contact.jpg' alt={i18n.T1} className='hidden md:block md:w-1/2 shadow rounded' />
         </div>
 
         <Social />
