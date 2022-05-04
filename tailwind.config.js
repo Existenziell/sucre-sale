@@ -19,8 +19,8 @@ module.exports = {
       },
       backgroundImage: {
         'cloth-pattern': 'url(/icons/cloth.jpg)',
-        'parallax-1': 'url(/parallax/1.png)',
-        'parallax-2': 'url(/parallax/2.png)',
+        'parallax-1': 'url(/parallax/2.png)',
+        'parallax-2': 'url(/parallax/1.png)',
         poly: 'url(/icons/poly.svg)',
       },
       minWidth: {
