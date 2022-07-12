@@ -4,7 +4,7 @@ const Nav = ({ view, setView }) => {
   }
 
   return (
-    <ul className="flex items-center justify-between gap-4 flex-wrap w-full my-12">
+    <ul className="flex items-center justify-between gap-4 flex-wrap w-full mt-12">
       <li><button onClick={navigate} name='all' className={view === 'all' ? `active-menu-nav` : `border-b border-transparent hover:text-brand`}>All</button></li>
       <li><button onClick={navigate} name='breakfast' className={view === 'breakfast' ? `active-menu-nav` : `border-b border-transparent hover:text-brand`}>Breakfast</button></li>
       <li><button onClick={navigate} name='specialities' className={view === 'specialities' ? `active-menu-nav` : `border-b border-transparent hover:text-brand`}>Specialities</button></li>

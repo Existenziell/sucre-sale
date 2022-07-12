@@ -1,7 +1,7 @@
 const Bread = () => {
   return (
     <>
-      <h1 className='mx-auto w-max'>French Artesanal Bread</h1>
+      <h1 className='mx-auto w-max mt-20'>French Artesanal Bread</h1>
 
       <div className='flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-center items-center mb-8'>
         <div><img src='/menu/bread.jpg' alt='breakfast' className='rounded shadow md:mx-0 max-h-80' /></div>
