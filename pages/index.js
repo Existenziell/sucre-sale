@@ -14,15 +14,15 @@ const Home = ({ i18n }) => {
 
       <header className='flex items-center justify-center h-screen sm:bg-fixed bg-center bg-cover bg-parallax-1'>
         <a href='#anchor' aria-label='Scroll down'>
-          <h1 className='px-6 py-4 text-6xl text-white bg-brand/80 dark:text-brand dark:bg-brand-dark/80 rounded'>
+          <h1 className='px-6 py-4 text-white bg-brand/80 dark:text-brand dark:bg-brand-dark/80 rounded'>
             {i18n.T1}
           </h1>
         </a>
       </header>
 
       <div className='max-w-xl m-auto px-4 leading-relaxed my-16' id='anchor'>
-        <p>{i18n.T2}</p>
-        <h2 className='text-6xl my-8'>{i18n.T3}</h2>
+        <p className='mb-6'>{i18n.T2}</p>
+        <h1>{i18n.T3}</h1>
         <p>{i18n.T4}</p>
         <div className='my-8'>
           <Link href='/menu'><a className='button inline-block sm:mr-6'>{i18n.B1}</a></Link>

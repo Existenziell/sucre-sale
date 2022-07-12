@@ -66,18 +66,17 @@ const Contact = ({ i18n }) => {
       </Head>
 
       <div className='flex flex-col items-center justify-center px-4 md:px-8 py-24 lg:w-2/3 lg:mx-auto'>
-        <h1 className='text-6xl mb-12'>{i18n.T1}</h1>
+        <h1>{i18n.T1}</h1>
         <div className='md:flex items-center gap-8 md:text-right'>
           <div className='md:w-2/3'>
-            <p className='text-lg leading-relaxed mb-8 max-w-sm'>{i18n.T2}</p>
-            <p className='hidden md:block text-sm leading-relaxed mb-8'>{i18n.T3}</p>
+            <p className='text-lg leading-relaxed mb-8'>{i18n.T2}</p>
           </div>
-          <img src='/icons/contact.jpg' alt={i18n.T1} className='hidden md:block md:w-1/2 shadow rounded' />
+          <img src='/bakery/bakery_outside.jpg' alt={i18n.T1} className='hidden md:block md:w-1/2 shadow rounded' />
         </div>
 
         <Social />
 
-        <div className='px-4 pt-8 pb-0 sm:px-12 shadow w-full bg-cover bg-no-repeat bg-poly rounded-lg bg-white/10 backdrop-blur-md text-white'>
+        <div className='px-4 pt-8 pb-0 sm:px-12 shadow w-full bg-brand-dark dark:bg-brand rounded-lg bg-white/10 backdrop-blur-md text-white'>
           <form onSubmit={submitForm}>
             {specialTopic &&
               <div className='flex items-center mb-8'>

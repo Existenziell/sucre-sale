@@ -19,7 +19,7 @@ const Success = ({ i18n }) => {
             </svg>
           </a>
         </Link>
-        <h1 className='text-6xl my-8'>{i18n.T1}</h1>
+        <h1>{i18n.T1}</h1>
 
         <div className='flex'>
           <Link href='/'><a className='button mr-6'>{i18n.B1}</a></Link>

@@ -1,8 +1,20 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import Head from 'next/head'
+import { useState } from 'react'
+import Bread from '../components/menu/Bread'
+import Breakfast from '../components/menu/Breakfast'
+import Coffee from '../components/menu/Coffee'
+import Crepes from '../components/menu/Crepes'
+import CrepesSavory from '../components/menu/CrepesSavory'
+import Desserts from '../components/menu/Desserts'
+import Nav from '../components/menu/Nav'
+import Specialities from '../components/menu/Specialities'
 import langEN from '../i18n/en.json'
 import langES from '../i18n/es.json'
+import Quote from '../components/Quote'
 
 const Menu = ({ i18n }) => {
+  const [view, setView] = useState('all')
 
   return (
     <>
@@ -11,42 +23,90 @@ const Menu = ({ i18n }) => {
         <meta name='description' content={i18n.desc} />
       </Head>
 
-      <div className='flex flex-col justify-center w-full px-4 md:px-8 py-24'>
+      <div className=' w-full px-8 py-24'>
 
-        <h1 className='text-6xl mb-12'>{i18n.M1}</h1>
-        <h2 className='text-3xl mb-4 max-w-xs mx-auto'>{i18n.M2a}</h2>
-        <p className='max-w-lg mx-auto'>{i18n.M2b}</p>
+        <div className='flex flex-col justify-center'>
+          <h1>{i18n.M1}</h1>
+          {/* <p className='text-xl max-w-xs mx-auto italic'>{i18n.M2a}</p> */}
+          <Quote text={i18n.M2a} classes='mx-auto italic text-lg' />
+          {/* <p className='max-w-lg mx-auto mb-8'>{i18n.M2b}</p> */}
+        </div>
 
-        <div className='flex flex-col items-center'>
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M3}</h3>
-          <img src='/menu/breakfast-french.jpg' alt='breakfast' width={500} className='rounded shadow mb-4' />
-          <img src='/menu/breakfast-french2.jpg' alt='breakfast' width={500} className='rounded shadow' />
 
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M4}</h3>
-          <img src='/menu/breakfast-mex.jpg' alt='breakfast' width={500} className='rounded shadow' />
-
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M5}</h3>
-          <img src='/menu/empanada.jpg' alt='empanadas' width={500} className='rounded shadow' />
-
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M6}</h3>
-          <img src='/menu/crepes-savory.jpg' alt='crepes_savory' width={500} className='rounded shadow' />
-
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M7}</h3>
-          <img src='/menu/crepes.jpg' alt='crepes' width={500} className='rounded shadow' />
-
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M8}</h3>
-          <img src='/menu/pasteles.png' alt='pasteles' width={500} className='rounded shadow' />
-
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M9}</h3>
-          <img src='/menu/bread.jpg' alt='bread' width={500} className='rounded shadow mb-4' />
-
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M10}</h3>
-          <img src='/menu/coffee.jpg' alt='coffee' width={500} className='rounded shadow' />
-
-          <h3 className='text-xl mb-2 mt-12'>{i18n.M11}</h3>
-          <img src='/menu/specialities.jpg' alt='specialities' width={500} className='rounded shadow mb-4' />
-          <img src='/menu/specialities2.jpg' alt='specialities' width={500} className='rounded shadow' />
-
+        <div className='flex flex-col items-start justify-center mx-auto text-left max-w-4xl'>
+          <Nav view={view} setView={setView} />
+          <AnimatePresence>
+            {(view === 'breakfast' || view === 'all') &&
+              <motion.div
+                key={'breakfast'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='w-full'>
+                <Breakfast />
+              </motion.div>
+            }
+            {(view === 'specialities' || view === 'all') &&
+              <motion.div
+                key={'specialities'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='w-full'>
+                <Specialities />
+              </motion.div>
+            }
+            {(view === 'bread' || view === 'all') &&
+              <motion.div
+                key={'bread'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='w-full'>
+                <Bread />
+              </motion.div>
+            }
+            {(view === 'savory' || view === 'all') &&
+              <motion.div
+                key={'savory'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='w-full'>
+                <CrepesSavory />
+              </motion.div>
+            }
+            {(view === 'sweet' || view === 'all') &&
+              <motion.div
+                key={'sweet'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='w-full'>
+                <Crepes />
+              </motion.div>
+            }
+            {(view === 'desserts' || view === 'all') &&
+              <motion.div
+                key={'desserts'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='w-full'>
+                <Desserts />
+              </motion.div>
+            }
+            {(view === 'coffee' || view === 'all') &&
+              <motion.div
+                key={'coffee'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='w-full'>
+                <Coffee />
+              </motion.div>
+            }
+          </AnimatePresence>
         </div>
       </div>
     </>
