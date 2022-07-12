@@ -87,8 +87,12 @@ h3 {
   @apply font-bold bg-brand text-white border-b-0;
 }
 
+.menu-nav {
+  @apply border-b border-transparent hover:text-brand;
+}
+
 .active-menu-nav {
-  @apply border-b border-brand-dark text-brand transition-all;
+  @apply border-b border-brand-dark dark:border-brand text-brand dark:text-white transition-all;
 }
 
 
