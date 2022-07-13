@@ -11,7 +11,6 @@ import Nav from '../components/menu/Nav'
 import Specialities from '../components/menu/Specialities'
 import langEN from '../i18n/en.json'
 import langES from '../i18n/es.json'
-import Quote from '../components/Quote'
 
 const Menu = ({ i18n }) => {
   const [view, setView] = useState('all')

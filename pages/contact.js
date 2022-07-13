@@ -68,15 +68,14 @@ const Contact = ({ i18n }) => {
 
       <div className='flex flex-col items-center justify-center px-4 md:px-8 py-24 lg:w-2/3 lg:mx-auto'>
         <h1>{i18n.T1}</h1>
-        <div className='md:flex items-center gap-8 md:text-right'>
+        <div className='md:flex items-center gap-8 md:text-right mb-4 md:mb-12'>
           <div className='md:w-2/3'>
             <p className='text-lg leading-relaxed mb-8'>{i18n.T2}</p>
+            <Social />
             <Link href='/map'><a className='link text-lg leading-relaxed mb-8'>{i18n.T3}</a></Link>
           </div>
           <img src='/bakery/bakery_outside.jpg' alt={i18n.T1} className='hidden md:block md:w-1/2 shadow rounded' />
         </div>
-
-        <Social />
 
         <div className='px-4 pt-8 pb-0 sm:px-12 shadow w-full bg-brand-dark dark:bg-brand rounded-lg backdrop-blur-md text-white'>
           <form onSubmit={submitForm}>

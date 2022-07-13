@@ -56,7 +56,7 @@ const Social = () => {
 
 
   return (
-    <ul className='flex gap-4 my-8 z-20'>
+    <ul className='flex justify-center md:justify-end gap-4 my-8'>
       {socialLinks.map(l => {
         const { name, link, icon } = l
         return (
