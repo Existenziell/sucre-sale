@@ -8,14 +8,12 @@ const Footer = () => {
   const router = useRouter()
   const { ref, inView } = useInView({})
   const fadeIn = useAnimation()
+  const { pathname, asPath, query } = router
 
+  // https://nextjs.org/docs/advanced-features/i18n-routing
   const setLanguage = (e) => {
-    // console.log(router.pathname, router.locale, e.target.name);
     if (router.locale !== e.target.name) {
-      console.log("I want change", `/${e.target.name}${router.pathname}`);
-      router.push(`/${e.target.name}${router.pathname}`)
-    } else {
-      console.log("no change");
+      router.push({ pathname, query }, asPath, { locale: e.target.name })
     }
   }
 
