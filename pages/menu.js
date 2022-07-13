@@ -19,22 +19,20 @@ const Menu = ({ i18n }) => {
   return (
     <>
       <Head>
-        <title>{i18n.title}</title>
-        <meta name='description' content={i18n.desc} />
+        <title>{i18n.menu.title}</title>
+        <meta name='description' content={i18n.menu.desc} />
       </Head>
 
-      <div className=' w-full px-8 py-24'>
+      <div className='w-full px-8 py-24'>
 
         <div className='flex flex-col justify-center'>
-          <h1>{i18n.M1}</h1>
-          {/* <p className='text-xl max-w-xs mx-auto italic'>{i18n.M2a}</p> */}
-          <Quote text={i18n.M2a} classes='mx-auto italic text-lg' />
-          {/* <p className='max-w-lg mx-auto mb-8'>{i18n.M2b}</p> */}
+          <h1>{i18n.menu.M1}</h1>
+          <Quote text={i18n.menu.M2a} classes='mx-auto italic text-lg' />
+          {/* <p className='max-w-lg mx-auto mb-8'>{i18n.menu.M2b}</p> */}
         </div>
 
-
         <div className='flex flex-col items-start justify-center mx-auto text-left max-w-4xl'>
-          <Nav view={view} setView={setView} />
+          <Nav view={view} setView={setView} i18n={i18n.nav} />
           <AnimatePresence>
             {(view === 'breakfast' || view === 'all') &&
               <motion.div
@@ -43,7 +41,7 @@ const Menu = ({ i18n }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className='w-full'>
-                <Breakfast />
+                <Breakfast i18n={i18n.breakfast} />
               </motion.div>
             }
             {(view === 'specialities' || view === 'all') &&
@@ -53,7 +51,7 @@ const Menu = ({ i18n }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className='w-full'>
-                <Specialities />
+                <Specialities i18n={i18n.special} />
               </motion.div>
             }
             {(view === 'bread' || view === 'all') &&
@@ -116,8 +114,8 @@ const Menu = ({ i18n }) => {
 export async function getStaticProps(context) {
   let i18n
   context.locale === 'en' ?
-    i18n = langEN.menu :
-    i18n = langES.menu
+    i18n = langEN :
+    i18n = langES
   return {
     props: { i18n },
   }
