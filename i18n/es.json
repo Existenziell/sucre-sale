@@ -10,14 +10,14 @@
     "title": "Sucré Salé | Panadería Francesa Cozumel",
     "desc": "Somos un restaurante familiar francés con un amplio repertorio de postres y deliciosos platillos",
     "T1": "Sucré Salé",
-    "T2": "¡Lo más delicioso en la isla!",
+    "T2": "Panadería Francesa Cozumel, Mexico",
     "T3": "¡Bienvenido!",
-    "T4": "Somos un restaurante familiar francés con un amplio repertorio de postres y deliciosos platillos.",
+    "T4": "Nuestra cafetería busca darte una experiencia inigualable. Entre sabores y colores, Sucré/Salé tiene como meta que todos los clientes se sientan satisfechos y felices al deleitar nuestro amplio y variado menú francés. trabajamos arduamente para darle la atención y la satisfacción necesaria al cliente.",
     "B1": "Ver menú",
     "B2": "Reservar mesa",
-    "T5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "T6": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "T7": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "B3": "Encuentra en el mapa",
+    "T5": "Comida de Calidad con un Toque Hogareño",
+    "T6": "Calle 2 Nte. 101b, Centro, 77600 San Miguel de Cozumel, Q.R.  |  +52 987 115 59 68"
   },
 
   "menu": {
@@ -99,7 +99,7 @@
     "desc": "Contacto | Sucré Salé | Panadería Francesa Cozumel",
     "T1": "Contacto",
     "T2": "Deje sugerencias o comentarios, es muy bienvenido. ¡Estamos muy contentos de saber de ti!",
-    "T3": "Esta foto fue tomada durante una fuerte tormenta, celebrando la calidez dentro de nuestro café.",
+    "T3": "Encuentranos en el mapa",
     "T4": "Nombre",
     "T5": "Correo electrónico",
     "T6": "Messaje",

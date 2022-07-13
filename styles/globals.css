@@ -101,10 +101,7 @@ h3 {
 	========================================================================== */
 
 .button {
-  @apply w-48 px-8 py-4 
-  bg-brand text-white rounded shadow-lg
-    hover:shadow hover:cursor-pointer
-    transition-all
+  @apply px-8 py-4  bg-brand text-white rounded shadow-lg hover:shadow hover:cursor-pointer transition-all whitespace-nowrap;
 }
 
 input[type="radio"] {
@@ -154,11 +151,11 @@ div.mapboxgl-popup-content {
 }
 
 .mapboxgl-popup-content h1 {
-  @apply text-6xl mb-1 text-brand;
+  @apply text-4xl md:text-6xl mb-1 text-brand;
 }
 
 .mapboxgl-popup-content h2 {
-  @apply mb-6 text-lg font-normal;
+  @apply mt-0 md:mt-8 mb-4 text-lg font-normal;
 }
 
 .mapboxgl-popup-content strong {

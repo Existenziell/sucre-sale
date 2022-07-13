@@ -5,6 +5,7 @@ import Social from '../components/Social'
 import PacmanLoader from 'react-spinners/PacmanLoader'
 import langEN from '../i18n/en.json'
 import langES from '../i18n/es.json'
+import Link from 'next/link'
 
 const Contact = ({ i18n }) => {
 
@@ -70,13 +71,14 @@ const Contact = ({ i18n }) => {
         <div className='md:flex items-center gap-8 md:text-right'>
           <div className='md:w-2/3'>
             <p className='text-lg leading-relaxed mb-8'>{i18n.T2}</p>
+            <Link href='/map'><a className='link text-lg leading-relaxed mb-8'>{i18n.T3}</a></Link>
           </div>
           <img src='/bakery/bakery_outside.jpg' alt={i18n.T1} className='hidden md:block md:w-1/2 shadow rounded' />
         </div>
 
         <Social />
 
-        <div className='px-4 pt-8 pb-0 sm:px-12 shadow w-full bg-brand-dark dark:bg-brand rounded-lg bg-white/10 backdrop-blur-md text-white'>
+        <div className='px-4 pt-8 pb-0 sm:px-12 shadow w-full bg-brand-dark dark:bg-brand rounded-lg backdrop-blur-md text-white'>
           <form onSubmit={submitForm}>
             {specialTopic &&
               <div className='flex items-center mb-8'>

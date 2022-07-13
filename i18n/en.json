@@ -10,14 +10,14 @@
     "title": "Sucré Salé | French Bakery Cozumel",
     "desc": "We are a French family restaurant with a wide repertoire of desserts and delicious dishes",
     "T1": "Sucré Salé",
-    "T2": "The most delicious on the island!",
+    "T2": "French Bakery Cozumel, Mexico",
     "T3": "Welcome!",
-    "T4": "We are a French family restaurant with a wide repertoire of desserts and delicious dishes.",
+    "T4": "Our café seeks to give you an unparalleled experience. Between flavors and colors, Sucré-Salé's goal is for all customers to feel satisfied and happy by enjoying our wide and varied French menu. We are happy to give you the necessary attention and satisfaction.",
     "B1": "See menu",
     "B2": "Book a table",
-    "T5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "T6": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "T7": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "B3": "Find on map",
+    "T5": "Quality Food with a Homely Touch",
+    "T6": "Calle 2 Nte. 101b, Centro, 77600 San Miguel de Cozumel, Q.R.  |  +52 987 115 59 68"
   },
 
   "menu": {
@@ -99,11 +99,11 @@
     "desc": "Contact | Sucré Salé | French Bakery Cozumel",
     "T1": "Contact",
     "T2": "Please leave any suggestions or feedback, it is always very welcome. We are excited to hear from you!",
-    "T3": "This picture was taken during a heavy storm, celebrating the cosiness inside our café.",
+    "T3": "Find us on the Map",
     "T4": "Name",
     "T5": "Email",
     "T6": "Message",
-    "T7": "Submit"
+    "T7": "Send"
   },
 
   "success": {

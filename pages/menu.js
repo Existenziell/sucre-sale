@@ -27,7 +27,6 @@ const Menu = ({ i18n }) => {
 
         <div className='flex flex-col justify-center'>
           <h1>{i18n.menu.M1}</h1>
-          <Quote text={i18n.menu.M2a} classes='mx-auto italic text-lg' />
           {/* <p className='max-w-lg mx-auto mb-8'>{i18n.menu.M2b}</p> */}
         </div>
 

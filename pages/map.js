@@ -7,6 +7,7 @@ import Head from 'next/head'
 import langEN from '../i18n/en.json'
 import langES from '../i18n/es.json'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { COORDS } from '../lib/config'
 
 const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js')
 
@@ -35,10 +36,7 @@ const MapComponent = ({ i18n }) => {
         },
         geometry: {
           type: "Point",
-          coordinates: [
-            -86.94791627099595,
-            20.51127295489306
-          ]
+          coordinates: COORDS
         }
       }
     ]
@@ -47,14 +45,20 @@ const MapComponent = ({ i18n }) => {
   useEffect(() => {
     setPageIsMounted(true)
 
+    // Use proper light/dark map theme
+    let mapTheme = 'light'
+    if (localStorage?.theme === 'dark') {
+      mapTheme = 'dark'
+    }
+
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/dark-v10',
+      style: `mapbox://styles/mapbox/${mapTheme}-v10`,
       // style: 'mapbox://styles/mapbox/satellite-v9',
       // style: 'mapbox://styles/mapbox/streets-v11',
       // style: 'mapbox://styles/mapbox/navigation-night-v1',
-      center: [-86.94791627099595, 20.51127295489306],
-      zoom: 15.8,
+      center: COORDS,
+      zoom: 13,
     })
 
     initializeMap(map, i18n)
