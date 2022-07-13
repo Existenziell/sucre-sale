@@ -3,7 +3,7 @@ const Desserts = () => {
   return (
     <>
 
-      <h1 className='mx-auto w-max mt-12'>Desserts</h1>
+      <h1 className='mx-auto w-max mt-20'>Desserts</h1>
       <div className='flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-center items-center mb-8'>
         <div className='w-full'>
 

@@ -1,7 +1,7 @@
 const CrepesSavory = () => {
   return (
     <>
-      <h1 className='mx-auto w-max mt-12'>Savory Crepes</h1>
+      <h1 className='mx-auto w-max mt-20'>Savory Crepes</h1>
 
       <div className='flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-center items-center mb-8'>
         <div className='w-full'>

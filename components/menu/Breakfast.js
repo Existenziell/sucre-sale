@@ -2,7 +2,7 @@ const Breakfast = ({ i18n }) => {
 
   return (
     <>
-      <h1 className='mx-auto w-max mt-12'>{i18n.title}</h1>
+      <h1 className='mx-auto w-max mt-20'>{i18n.title}</h1>
 
       <div className='flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-center items-center mb-8'>
         <div><img src='/menu/breakfast.jpg' alt='breakfast' className='rounded shadow md:mx-0 max-h-64' /></div>
