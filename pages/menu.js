@@ -60,7 +60,7 @@ const Menu = ({ i18n }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className='w-full'>
-                <Bread />
+                <Bread i18n={i18n.bread} />
               </motion.div>
             }
             {(view === 'savory' || view === 'all') &&
@@ -70,7 +70,7 @@ const Menu = ({ i18n }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className='w-full'>
-                <CrepesSavory />
+                <CrepesSavory i18n={i18n.savory} />
               </motion.div>
             }
             {(view === 'sweet' || view === 'all') &&
@@ -80,7 +80,7 @@ const Menu = ({ i18n }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className='w-full'>
-                <Crepes />
+                <Crepes i18n={i18n.sweet} />
               </motion.div>
             }
             {(view === 'desserts' || view === 'all') &&
@@ -90,7 +90,7 @@ const Menu = ({ i18n }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className='w-full'>
-                <Desserts />
+                <Desserts i18n={i18n.desserts} />
               </motion.div>
             }
             {(view === 'coffee' || view === 'all') &&
@@ -100,7 +100,7 @@ const Menu = ({ i18n }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className='w-full'>
-                <Coffee />
+                <Coffee i18n={i18n.coffee} />
               </motion.div>
             }
           </AnimatePresence>

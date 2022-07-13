@@ -43,7 +43,7 @@ const Home = ({ i18n }) => {
       <div className='flex flex-col items-center justify-center mt-20'>
         <Quote text={i18n.T5} classes='mx-auto w-max italic text-lg' />
         <Social />
-        <Link href='/map'><a className='button inline-block mt-6'>{i18n.B3}</a></Link>
+        <Link href='/map'><a className='button inline-block mt-2'>{i18n.B3}</a></Link>
 
         <img src='/bakery/pano1.jpg' alt='Panoramic' className='rounded shadow mt-20' />
         <p className='mt-8 pb-16'>{i18n.T6}</p>
