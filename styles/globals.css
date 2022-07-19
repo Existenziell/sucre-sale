@@ -92,7 +92,7 @@ h3 {
 }
 
 .active-menu-nav {
-  @apply border-b border-brand-dark dark:border-brand text-brand dark:text-white transition-all;
+  @apply border-b border-brand-dark dark:border-brand text-brand dark:text-white font-bold transition-all;
 }
 
 
