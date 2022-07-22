@@ -8,11 +8,11 @@ const CrepesSavory = ({ i18n }) => {
           <h3>{i18n.T1}:</h3>
           <div className='flex items-center justify-between mt-4'>
             <h3>{i18n.T2}</h3>
-            <h3>$72.00</h3>
+            <h3>$77.00</h3>
           </div>
           <div className='flex items-center justify-between mt-1'>
             <h3>{i18n.T3}</h3>
-            <h3>$80.00</h3>
+            <h3>$85.00</h3>
           </div>
 
           <h2 className='border-b border-slate-400'>{i18n.E0}</h2>
@@ -23,7 +23,7 @@ const CrepesSavory = ({ i18n }) => {
             <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E4}</span><h3>$19.00</h3></li>
             <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E5}</span><h3>$19.00</h3></li>
             <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E6}</span><h3>$19.00</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E7}</span><h3>$19.00</h3></li>
+            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E7}</span><h3>$25.00</h3></li>
             <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E8}</span><h3>$29.00</h3></li>
           </ul>
         </div>

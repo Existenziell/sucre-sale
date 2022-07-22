@@ -32,7 +32,7 @@ const Specialities = ({ i18n }) => {
 
           <div className='flex items-center justify-between mt-4'>
             <h3>{i18n.T9}</h3>
-            <h3>$81.00</h3>
+            <h3>$91.00</h3>
           </div>
           <p>{i18n.T10}</p>
         </div>
@@ -42,7 +42,7 @@ const Specialities = ({ i18n }) => {
         <div>
           <div className='flex items-center justify-between mt-4'>
             <h3>{i18n.T11}</h3>
-            <h3>$87.00</h3>
+            <h3>$97.00</h3>
           </div>
           <p>{i18n.T12}</p>
 
@@ -60,7 +60,7 @@ const Specialities = ({ i18n }) => {
 
           <div className='flex items-center justify-between mt-4'>
             <h3>{i18n.T17}</h3>
-            <h3>$91.00</h3>
+            <h3>$97.00</h3>
           </div>
           <p>{i18n.T18}</p>
         </div>

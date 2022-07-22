@@ -52,7 +52,7 @@ const Desserts = ({ i18n }) => {
 
           <div className='flex items-center justify-between mt-4'>
             <h3>{i18n.T12}</h3>
-            <h3>$46.00</h3>
+            <h3>$65.00</h3>
           </div>
 
           <div className='flex items-center justify-between mt-4'>
