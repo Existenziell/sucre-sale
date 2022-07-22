@@ -38,7 +38,7 @@ const Menu = ({ i18n }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-full shadow-2xl bg-white px-6 py-2 rounded'>
+                className='w-full shadow-2xl bg-white dark:bg-slate-800 px-6 py-2 rounded'>
                 <Breakfast i18n={i18n.breakfast} />
               </motion.div>
             }
@@ -48,7 +48,7 @@ const Menu = ({ i18n }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-full shadow-2xl bg-white px-6 py-2 rounded'>
+                className='w-full shadow-2xl bg-white dark:bg-slate-800 px-6 py-2 rounded'>
                 <Specialities i18n={i18n.special} />
               </motion.div>
             }
@@ -58,7 +58,7 @@ const Menu = ({ i18n }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-full shadow-2xl bg-white px-6 py-2 rounded'>
+                className='w-full shadow-2xl bg-white dark:bg-slate-800 px-6 py-2 rounded'>
                 <Bread i18n={i18n.bread} />
               </motion.div>
             }
@@ -68,7 +68,7 @@ const Menu = ({ i18n }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-full shadow-2xl bg-white px-6 py-2 rounded'>
+                className='w-full shadow-2xl bg-white dark:bg-slate-800 px-6 py-2 rounded'>
                 <CrepesSavory i18n={i18n.savory} />
               </motion.div>
             }
@@ -78,7 +78,7 @@ const Menu = ({ i18n }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-full shadow-2xl bg-white px-6 py-2 rounded'>
+                className='w-full shadow-2xl bg-white dark:bg-slate-800 px-6 py-2 rounded'>
                 <Crepes i18n={i18n.sweet} />
               </motion.div>
             }
@@ -88,7 +88,7 @@ const Menu = ({ i18n }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-full shadow-2xl bg-white px-6 py-2 rounded'>
+                className='w-full shadow-2xl bg-white dark:bg-slate-800 px-6 py-2 rounded'>
                 <Desserts i18n={i18n.desserts} />
               </motion.div>
             }
@@ -98,7 +98,7 @@ const Menu = ({ i18n }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className='w-full shadow-2xl bg-white px-6 py-2 rounded'>
+                className='w-full shadow-2xl bg-white dark:bg-slate-800 px-6 py-2 rounded'>
                 <Coffee i18n={i18n.coffee} />
               </motion.div>
             }
