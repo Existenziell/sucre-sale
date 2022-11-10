@@ -6,15 +6,16 @@ import PacmanLoader from 'react-spinners/PacmanLoader'
 import langEN from '../i18n/en.json'
 import langES from '../i18n/es.json'
 import Link from 'next/link'
+import MapComponent from '../components/Map'
 
 const Contact = ({ i18n }) => {
-
+  // console.log(i18n.contact, i18n.map);
   const [formData, setFormData] = useState()
   const [sending, setSending] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
   const [specialTopic, setSpecialTopic] = useState('')
-
   const router = useRouter()
+  i18n = i18n.contact
 
   useEffect(() => {
     const topic = router.query.topic
@@ -64,11 +65,12 @@ const Contact = ({ i18n }) => {
       <Head>
         <title>{i18n.title}</title>
         <meta name='description' content={i18n.desc} />
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
       </Head>
 
-      <div className='flex flex-col items-center justify-center px-4 md:px-8 py-24 lg:w-2/3 lg:mx-auto'>
+      <div className='flex flex-col items-center justify-center px-4 md:px-8 pt-24 pb-8 lg:w-2/3 lg:mx-auto'>
         <h1>{i18n.T1}</h1>
-        <div className='md:flex items-center gap-8 md:text-right mb-4 md:mb-12'>
+        <div className='md:flex items-center gap-8 md:text-right mb-4 md:mb-8'>
           <div className='md:w-2/3'>
             <p className='text-lg leading-relaxed mb-8'>{i18n.T2}</p>
             <Social />
@@ -126,6 +128,7 @@ const Contact = ({ i18n }) => {
           </form>
         </div>
       </div>
+      <MapComponent i18n={i18n} />
     </>
   )
 }
@@ -133,8 +136,8 @@ const Contact = ({ i18n }) => {
 export async function getStaticProps(context) {
   let i18n
   context.locale === 'en' ?
-    i18n = langEN.contact :
-    i18n = langES.contact
+    i18n = langEN :
+    i18n = langES
   return {
     props: { i18n },
   }

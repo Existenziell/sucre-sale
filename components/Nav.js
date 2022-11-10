@@ -17,7 +17,7 @@ const Nav = () => {
     const urls = [
         { name: i18n.N1, url: '/', title: i18n.N1 },
         { name: i18n.N2, url: '/menu', title: i18n.N2 },
-        { name: i18n.N3, url: '/map', title: i18n.N3 },
+        // { name: i18n.N3, url: '/map', title: i18n.N3 },
         { name: i18n.N4, url: '/contact', title: i18n.N4 },
     ]
 

@@ -3,11 +3,8 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { initializeMap } from '../lib/map/initializeMap'
 import { addDataLayer } from '../lib/map/addDataLayer'
-import Head from 'next/head'
-import langEN from '../i18n/en.json'
-import langES from '../i18n/es.json'
-import 'mapbox-gl/dist/mapbox-gl.css'
 import { COORDS } from '../lib/config'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js')
 
@@ -15,7 +12,6 @@ const MapComponent = ({ i18n }) => {
   const router = useRouter()
   const [Map, setMap] = useState()
   const [pageIsMounted, setPageIsMounted] = useState(false)
-
   mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
 
   const location = {
@@ -61,7 +57,7 @@ const MapComponent = ({ i18n }) => {
       zoom: 13,
     })
 
-    initializeMap(map, i18n)
+    initializeMap(map)
     setMap(map)
   }, [router.query.location])
 
@@ -74,26 +70,8 @@ const MapComponent = ({ i18n }) => {
   }, [pageIsMounted, setMap, Map])
 
   return (
-    <>
-      <Head>
-        <title>{i18n.title}</title>
-        <meta name='description' content={i18n.desc} />
-        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-      </Head>
-
-      <div id='map' className='w-full h-screen' />
-    </>
+    <div id='map' className='w-full h-[calc(50vh)] rounded-sm' />
   )
-}
-
-export async function getStaticProps(context) {
-  let i18n
-  context.locale === 'en' ?
-    i18n = langEN.map :
-    i18n = langES.map
-  return {
-    props: { i18n },
-  }
 }
 
 export default MapComponent
