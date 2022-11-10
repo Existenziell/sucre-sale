@@ -104,6 +104,10 @@ h3 {
   @apply px-8 py-4  bg-brand text-white rounded shadow-lg hover:shadow hover:cursor-pointer transition-all whitespace-nowrap;
 }
 
+.button-sm {
+  @apply px-4 py-2;
+}
+
 input[type="radio"] {
   @apply focus:outline-none hover:cursor-pointer mr-2 align-text-bottom mb-0.5; 
 }
