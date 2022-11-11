@@ -1,30 +1,34 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import Select from 'react-select'
+import BackBtn from '../../../../components/BackBtn'
 import { getSession } from 'next-auth/client'
 import { useState } from 'react'
 import { PulseLoader } from 'react-spinners'
 import { useRouter } from 'next/router'
 import { ObjectId } from 'mongodb'
 import { connectToDatabase } from "../../../../lib/mongodb"
-import { categories, adminusers } from '../../../../lib/config'
+import { adminusers } from '../../../../lib/config'
 
-const Item = ({ item }) => {
+const Item = ({ item, categories }) => {
   item = JSON.parse(item)
+  categories = JSON.parse(categories)
+
   const router = useRouter()
   const [enTrans, setEnTrans] = useState(item.en)
   const [esTrans, setEsTrans] = useState(item.es)
-  const [category, setCategory] = useState(item.cat)
+  const [category, setCategory] = useState(item.category)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [loading, setLoading] = useState(false)
 
   const categoryOptions = categories.map(cat => (
-    { value: cat.key, label: cat.en }
+    { value: cat._id, label: cat.en }
   ))
 
   const saveEdits = async (e) => {
     e.preventDefault()
     setLoading(true)
+
     const data = JSON.stringify({ key: item.key, id: item._id, en: enTrans, es: esTrans, category })
     try {
       const res = await fetch('/api/updateItem', {
@@ -69,6 +73,7 @@ const Item = ({ item }) => {
         <div className='min-h-[calc(100vh-48px)] w-full flex items-center justify-center'><PulseLoader color='var(--color-brand)' className='w-10' /></div>
         :
         <div className='px-4 md:px-8 pt-24 pb-8 min-h-[calc(100vh-48px)] text-left'>
+          <BackBtn link='/admin/manage' />
           <p>Id: <span>{item._id}</span></p>
           <p>Key: <span className='whitespace-nowrap'>{item.key}</span></p>
           <form onSubmit={saveEdits} className='mt-8'>
@@ -118,10 +123,10 @@ const Item = ({ item }) => {
               options={categoryOptions}
               onChange={(e) => setCategory(e.value)}
               instanceId
-              defaultValue={categoryOptions.filter(o => o.value === item.category)}
+              defaultValue={categoryOptions.filter(o => o.value.toString() === item.category.toString())}
               disabled={loading}
             />
-            <input type='submit' className='button button-sm mt-8 mr-2' value='Save' />
+            <input type='submit' className='button button-sm mt-8 mr-4' value='Save' />
             <Link href='/admin/manage/'><a>Cancel</a></Link>
           </form>
 
@@ -167,13 +172,20 @@ export async function getServerSideProps(ctx) {
       .collection("items")
       .findOne({ _id: ObjectId(id) })
 
+    const categories = await db
+      .collection("categories")
+      .find({})
+      .toArray()
+
+    item.categoryName = categories.filter(cat => (cat._id.toString() === item.category.toString())).at(0).en
+
     return {
       props: {
         item: JSON.stringify(item),
+        categories: JSON.stringify(categories),
       }
     }
   }
 }
-
 
 export default Item

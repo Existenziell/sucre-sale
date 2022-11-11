@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import BackBtn from '../../../../components/BackBtn'
 import { getSession } from 'next-auth/client'
 import { useState } from 'react'
 import { PulseLoader } from 'react-spinners'
@@ -64,6 +65,7 @@ const Category = ({ category }) => {
         <div className='min-h-[calc(100vh-48px)] w-full flex items-center justify-center'><PulseLoader color='var(--color-brand)' className='w-10' /></div>
         :
         <div className='px-4 md:px-8 pt-24 pb-8 min-h-[calc(100vh-48px)] text-left'>
+          <BackBtn link='/admin/manage' />
           <p>Id: <span>{category._id}</span></p>
           <p>Key: <span className='whitespace-nowrap'>{category.key}</span></p>
           <form onSubmit={saveEdits} className='mt-8'>

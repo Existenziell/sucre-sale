@@ -9,7 +9,6 @@ import Link from 'next/link'
 import MapComponent from '../components/Map'
 
 const Contact = ({ i18n }) => {
-  // console.log(i18n.contact, i18n.map);
   const [formData, setFormData] = useState()
   const [sending, setSending] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')

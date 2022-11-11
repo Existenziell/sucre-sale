@@ -7,7 +7,7 @@ const Nav = () => {
     const router = useRouter()
     const [isOpen, setIsOpen] = useState(false)
 
-    const { locale } = useRouter();
+    const { locale } = useRouter()
 
     let i18n
     locale === 'es' ?

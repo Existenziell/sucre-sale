@@ -1,17 +1,15 @@
 import { connectToDatabase } from "../../lib/mongodb"
 
-async function createNote(req, res) {
+async function createItem(req, res) {
   try {
     const { db } = await connectToDatabase()
     const data = req.body
-
-    console.log(data);
     if (!data) {
       res.status(404).send(false)
       return
     }
     try {
-      await db.collection("categories").insertOne({ ...data })
+      await db.collection("items").insertOne({ ...data })
     } catch (e) {
       console.log(e)
     }
@@ -21,4 +19,4 @@ async function createNote(req, res) {
   }
 }
 
-export default createNote
+export default createItem
