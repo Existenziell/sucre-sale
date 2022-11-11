@@ -65,10 +65,9 @@ const Contact = ({ i18n }) => {
       <Head>
         <title>{i18n.title}</title>
         <meta name='description' content={i18n.desc} />
-        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
       </Head>
 
-      <div className='flex flex-col items-center justify-center px-4 md:px-8 pt-24 pb-8 lg:w-2/3 lg:mx-auto'>
+      <div className='flex flex-col items-center justify-center px-4 md:px-8 pt-24 pb-16 lg:w-2/3 lg:mx-auto'>
         <h1>{i18n.T1}</h1>
         <div className='md:flex items-center gap-8 md:text-right mb-4 md:mb-8'>
           <div className='md:w-2/3'>
@@ -79,7 +78,7 @@ const Contact = ({ i18n }) => {
           <img src='/bakery/bakery_outside.jpg' alt={i18n.T1} className='hidden md:block md:w-1/2 shadow rounded' />
         </div>
 
-        <div className='px-4 pt-8 pb-0 sm:px-12 shadow w-full bg-brand-dark dark:bg-brand rounded-lg backdrop-blur-md text-white'>
+        <div className='px-4 pt-8 pb-0 sm:px-12 shadow w-full bg-brand-dark rounded-lg backdrop-blur-md text-white'>
           <form onSubmit={submitForm}>
             {specialTopic &&
               <div className='flex items-center mb-8'>

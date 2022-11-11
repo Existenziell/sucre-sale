@@ -54,8 +54,8 @@ const Footer = () => {
       </motion.a>
 
       <div className='flex items-center gap-2'>
-        <button onClick={setLanguage}><img src='/icons/mex.jpg' alt='Mexico Flag' name='es' className='grayscale h-4' /></button>
-        <button onClick={setLanguage}><img src='/icons/usa.jpg' alt='USA Flag' name='en' className='grayscale h-4' /></button>
+        <button onClick={setLanguage}><img src='/icons/mex.jpg' alt='Mexico Flag' name='es' className='grayscale h-4 hover:grayscale-0 transition-all' /></button>
+        <button onClick={setLanguage}><img src='/icons/usa.jpg' alt='USA Flag' name='en' className='grayscale h-4 hover:grayscale-0 transition-all' /></button>
       </div>
 
     </footer>
