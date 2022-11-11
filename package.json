@@ -19,7 +19,7 @@
     "mapbox-gl": "^2.6.0",
     "mongodb": "^3.6.3",
     "next": "12.3.3",
-    "next-auth": "^3.4.1",
+    "next-auth": "^4.16.4",
     "nextjs-progressbar": "^0.0.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
