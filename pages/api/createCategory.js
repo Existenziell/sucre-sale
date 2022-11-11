@@ -1,17 +1,24 @@
 import { connectToDatabase } from "../../lib/mongodb"
-import { ObjectId } from 'mongodb'
 
-export default async function deleteItem(req, res) {
+async function createNote(req, res) {
   try {
     const { db } = await connectToDatabase()
-    const id = req.body
-    if (!id) {
+    const data = req.body
+
+    console.log(data);
+    if (!data) {
       res.status(404).send(false)
       return
     }
-    await db.collection("items").deleteOne({ _id: ObjectId(id) })
+    try {
+      await db.collection("categories").insertOne({ ...data })
+    } catch (e) {
+      console.log(e)
+    }
     res.status(200).send(true)
   } catch (error) {
     res.status(404).send(false)
   }
 }
+
+export default createNote

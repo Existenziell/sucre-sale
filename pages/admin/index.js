@@ -14,7 +14,7 @@ const Admin = ({ session }) => {
         <meta name='description' content='Admin' />
       </Head>
 
-      <div className='flex flex-col items-center justify-center px-4 md:px-8 pt-24 pb-8 lg:w-2/3 lg:mx-auto min-h-[calc(100vh-50px)]'>
+      <div className='flex flex-col items-center justify-center px-4 md:px-8 pt-24 pb-8 lg:w-2/3 lg:mx-auto min-h-[calc(100vh-48px)]'>
         {!session ?
           <button onClick={() => signIn('auth0')} className='button'>
             Sign in

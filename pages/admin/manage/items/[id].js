@@ -2,14 +2,14 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Select from 'react-select'
 import { getSession } from 'next-auth/client'
-import { connectToDatabase } from "../../../lib/mongodb"
-import { adminusers } from '../../../lib/config'
 import { useState } from 'react'
 import { PulseLoader } from 'react-spinners'
 import { useRouter } from 'next/router'
-import { categories } from '../../../lib/config'
+import { ObjectId } from 'mongodb'
+import { connectToDatabase } from "../../../../lib/mongodb"
+import { categories, adminusers } from '../../../../lib/config'
 
-const Manage = ({ item }) => {
+const Item = ({ item }) => {
   item = JSON.parse(item)
   const router = useRouter()
   const [enTrans, setEnTrans] = useState(item.en)
@@ -42,7 +42,6 @@ const Manage = ({ item }) => {
 
   const deleteItem = async (e) => {
     e.preventDefault()
-    console.log(item._id);
     setShowDeleteModal(false)
     setLoading(true)
     try {
@@ -67,9 +66,9 @@ const Manage = ({ item }) => {
       </Head>
 
       {loading ?
-        <div className='min-h-[calc(100vh-50px)] w-full flex items-center justify-center'><PulseLoader color='var(--color-brand)' className='w-10' /></div>
+        <div className='min-h-[calc(100vh-48px)] w-full flex items-center justify-center'><PulseLoader color='var(--color-brand)' className='w-10' /></div>
         :
-        <div className='px-4 md:px-8 pt-24 pb-8 min-h-[calc(100vh-50px)] text-left'>
+        <div className='px-4 md:px-8 pt-24 pb-8 min-h-[calc(100vh-48px)] text-left'>
           <p>Id: <span>{item._id}</span></p>
           <p>Key: <span className='whitespace-nowrap'>{item.key}</span></p>
           <form onSubmit={saveEdits} className='mt-8'>
@@ -132,7 +131,7 @@ const Manage = ({ item }) => {
 
       {showDeleteModal &&
         <div className='absolute top-0 bottom-0 left-0 right-0 w-screen h-screen bg-black/30 backdrop-blur z-20 flex items-center justify-center'>
-          <div className=''>
+          <div className='bg-white text-brand-dark rounded px-6 py-4'>
             <p className='text-xl'>Are you sure you want to delete this item?</p>
             <p className='text-sm mb-4'>This action cannot be undone!</p>
             <div className='flex gap-4 justify-center'>
@@ -147,7 +146,7 @@ const Manage = ({ item }) => {
 }
 
 export async function getServerSideProps(ctx) {
-  const key = ctx.query.key
+  const id = ctx.query.id
   const { db } = await connectToDatabase()
   const session = await getSession(ctx)
 
@@ -166,7 +165,7 @@ export async function getServerSideProps(ctx) {
 
     const item = await db
       .collection("items")
-      .findOne({ key })
+      .findOne({ _id: ObjectId(id) })
 
     return {
       props: {
@@ -177,4 +176,4 @@ export async function getServerSideProps(ctx) {
 }
 
 
-export default Manage
+export default Item
