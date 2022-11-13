@@ -177,7 +177,8 @@ export async function getServerSideProps(ctx) {
       .find({})
       .toArray()
 
-    item.categoryName = categories.filter(cat => (cat._id.toString() === item.category.toString())).at(0).en
+    const filtered = categories.filter(cat => (cat._id.toString() === item.category.toString()))
+    if (filtered?.length) item.categoryName = filtered[0].en
 
     return {
       props: {
