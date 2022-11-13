@@ -91,16 +91,15 @@ export async function getServerSideProps(ctx) {
       .find({})
       .toArray()
 
-    console.log('categories', categories)
-    console.log('items', items)
-
     items.forEach(item => {
-      item.categoryName = categories.filter(cat => (cat._id.toString() === item.category.toString())).at(0).en
+      const filtered = categories.filter(cat => (cat._id?.toString() === item.category?.toString()))
+      if (filtered.length) item.categoryName = filtered.at(0).en
     })
 
     categories.forEach(category => {
       category.items = items.filter(item => (item.category.toString() === category._id.toString()))
     })
+    console.log('items', items)
 
     return {
       props: {
