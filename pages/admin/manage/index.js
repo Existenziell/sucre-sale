@@ -67,7 +67,7 @@ const Manage = ({ categories, items }) => {
 export async function getServerSideProps(ctx) {
   const { db } = await connectToDatabase()
   const session = await getSession(ctx)
-  console.log(session)
+
   if (!session) {
     ctx.res.setHeader("location", "/")
     ctx.res.statusCode = 302
@@ -91,6 +91,9 @@ export async function getServerSideProps(ctx) {
       .find({})
       .toArray()
 
+    console.log('categories', categories)
+    console.log('items', items)
+
     items.forEach(item => {
       item.categoryName = categories.filter(cat => (cat._id.toString() === item.category.toString())).at(0).en
     })
@@ -98,8 +101,7 @@ export async function getServerSideProps(ctx) {
     categories.forEach(category => {
       category.items = items.filter(item => (item.category.toString() === category._id.toString()))
     })
-    console.log('categories', categories)
-    console.log('items', items)
+
     return {
       props: {
         categories: JSON.stringify(categories),
