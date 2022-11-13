@@ -17,7 +17,7 @@ const Manage = ({ categories, items }) => {
       </Head>
 
       <div className='px-4 md:px-8 pt-24 pb-8 min-h-[calc(100vh-48px)]'>
-        <h1 className='text-4xl mb-1'>Sucré-Salé Dashboard</h1>
+        <p className='text-4xl mb-1'>Sucré-Salé Dashboard</p>
         <p>Remember, with great power comes great responsibility.</p>
         <div className='text-left mt-8'>
 
@@ -67,7 +67,7 @@ const Manage = ({ categories, items }) => {
 export async function getServerSideProps(ctx) {
   const { db } = await connectToDatabase()
   const session = await getSession(ctx)
-
+  console.log(session)
   if (!session) {
     ctx.res.setHeader("location", "/")
     ctx.res.statusCode = 302
@@ -98,7 +98,8 @@ export async function getServerSideProps(ctx) {
     categories.forEach(category => {
       category.items = items.filter(item => (item.category.toString() === category._id.toString()))
     })
-
+    console.log('categories', categories)
+    console.log('items', items)
     return {
       props: {
         categories: JSON.stringify(categories),

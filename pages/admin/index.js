@@ -31,6 +31,7 @@ const Admin = ({ session }) => {
                     layout={'responsive'}
                     objectFit={'cover'}
                     alt="Avatar"
+                    priority={true}
                   />
                 </div>
 
@@ -41,7 +42,7 @@ const Admin = ({ session }) => {
                 }
 
                 <div>
-                  <h1 className="mb-4 text-2xl">Welcome {session.user.name}</h1>
+                  <p className="mb-4 text-2xl">Welcome {session.user.name}</p>
                   <div className="flex items-center">
                     <svg className="w-6 h-6 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
