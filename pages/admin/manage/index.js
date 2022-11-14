@@ -1,7 +1,9 @@
-import { getSession } from 'next-auth/client'
-import { connectToDatabase } from "../../../lib/mongodb"
 import Link from 'next/link'
 import Head from 'next/head'
+import ItemsTable from '../../../components/ItemsTable'
+import CategoriesList from '../../../components/CategoriesList'
+import { getSession } from 'next-auth/client'
+import { connectToDatabase } from "../../../lib/mongodb"
 import { adminusers } from '../../../lib/config'
 import { PlusIcon } from '@heroicons/react/24/outline'
 
@@ -22,18 +24,7 @@ const Manage = ({ categories, items }) => {
         <div className='text-left mt-8'>
 
           <p className='font-bold mb-2'>Categories:</p>
-          <div className='text-sm flex justify-start flex-wrap gap-4 w-full mb-12'>
-            {categories.map(cat => (
-              <Link key={cat.key} href={`/admin/manage/categories/${cat._id}`}>
-                <a className='bg-white dark:bg-black px-4 py-3 rounded-sm block whitespace-nowrap'>
-                  <p className='whitespace-nowrap'>Key: {cat.key}</p>
-                  <p>EN: {cat.en}</p>
-                  <p>ES: {cat.es}</p>
-                  <p>Number of items: {cat.items.length}</p>
-                </a>
-              </Link>
-            ))}
-          </div>
+          <CategoriesList categories={categories} />
 
           <div className='flex justify-between items-center mb-2'>
             <p className='font-bold'>Menu Items:</p>
@@ -43,21 +34,7 @@ const Manage = ({ categories, items }) => {
               </a>
             </Link>
           </div>
-          <div className='text-sm flex justify-start flex-wrap gap-4 w-full mb-12'>
-            {items.map(item => (
-              <div key={item.key} className='flex justify-between gap-4 max-w-sm'>
-                <Link href={`/admin/manage/items/${item._id}`}>
-                  <a className='overflow-hidden bg-white dark:bg-black p-4'>
-                    <p className='whitespace-nowrap'>Key: {item.key}</p>
-                    {/* <p className='mb-2'>Category: {item.category}</p> */}
-                    <p className='mb-2'>Category: {item.categoryName}</p>
-                    <p className='truncate'>EN: {item.en}</p>
-                    <p className='truncate'>ES: {item.es}</p>
-                  </a>
-                </Link>
-              </div>
-            ))}
-          </div>
+          <ItemsTable items={items} />
         </div>
       </div>
     </>
