@@ -143,7 +143,7 @@ export async function getStaticProps(context) {
       i18n: JSON.stringify(menuItems),
       i18nStatic,
     },
-    revalidate: 60, // Each hour
+    revalidate: 3600, // Each hour
   }
 }
 
