@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { connectToDatabase } from '../../../../lib/mongodb'
 import { getSession } from 'next-auth/client'
-import { adminusers } from '../../../../lib/config'
 import { PulseLoader } from 'react-spinners'
 
 export default function NewItem({ categories }) {
@@ -31,7 +30,9 @@ export default function NewItem({ categories }) {
         headers: { "Content-Type": "application/json" }
       })
       if (res.status === 200) {
-        router.push('/admin/manage')
+        setLoading(false)
+        // router.push('/admin/manage')
+        // router.reload()
       }
     } catch (error) {
       console.log(error.message)
@@ -106,6 +107,7 @@ export default function NewItem({ categories }) {
                 />
 
                 <button type='submit' className='button max-w-max mx-auto mt-6'>Save</button>
+                <p onClick={() => router.push('/admin/manage')} className='cursor-pointer text-sm mt-2 max-w-max mx-auto hover:underline'>Cancel</p>
               </form>
             </div>
           </div>
@@ -125,7 +127,8 @@ export async function getServerSideProps(ctx) {
     ctx.res.end()
     return { props: {} }
   } else {
-    if (!adminusers.includes(session.user.email)) {
+    const isAdmin = process.env.ADMIN_USERS.split(',').includes(session.user.email)
+    if (!isAdmin) {
       ctx.res.setHeader("location", "/")
       ctx.res.statusCode = 302
       ctx.res.end()

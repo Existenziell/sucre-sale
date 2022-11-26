@@ -4,7 +4,7 @@ const Nav = ({ view, setView, i18n }) => {
   }
 
   return (
-    <ul className="flex items-center justify-between gap-4 flex-wrap w-full mt-6 mb-2">
+    <ul className="flex items-center text-sm justify-start md:justify-between gap-2 md:gap-0 flex-wrap w-full mb-6 md:mb-2">
       <li><button onClick={navigate} name='all' className={view === 'all' ? `active-menu-nav` : `menu-nav`}>{i18n.N1}</button></li>
       <li><button onClick={navigate} name='breakfast' className={view === 'breakfast' ? `active-menu-nav` : `menu-nav`}>{i18n.N2}</button></li>
       <li><button onClick={navigate} name='specialities' className={view === 'specialities' ? `active-menu-nav` : `menu-nav`}>{i18n.N3}</button></li>

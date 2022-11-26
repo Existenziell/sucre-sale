@@ -1,11 +1,10 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 import Head from 'next/head'
 import ItemsTable from '../../../components/ItemsTable'
 import CategoriesList from '../../../components/CategoriesList'
 import { getSession } from 'next-auth/client'
 import { connectToDatabase } from "../../../lib/mongodb"
-import { adminusers } from '../../../lib/config'
-import { PlusIcon } from '@heroicons/react/24/outline'
+// import { PlusIcon } from '@heroicons/react/24/outline'
 
 const Manage = ({ categories, items }) => {
   items = JSON.parse(items)
@@ -22,19 +21,18 @@ const Manage = ({ categories, items }) => {
         <p className='text-4xl mb-1'>Sucré-Salé Dashboard</p>
         <p>Remember, with great power comes great responsibility.</p>
         <div className='text-left mt-8'>
-
-          <p className='font-bold mb-2'>Categories:</p>
-          <CategoriesList categories={categories} />
-
-          <div className='flex justify-between items-center mb-2'>
-            <p className='font-bold'>Menu Items:</p>
-            <Link href='/admin/manage/items/new'>
+          <div className='flex justify-between items-center mb-4'>
+            <p className='font-bold text-2xl'>Menu Items:</p>
+            {/* <Link href='/admin/manage/items/new'>
               <a title='Add Item'>
                 <PlusIcon className='w-10' />
               </a>
-            </Link>
+            </Link> */}
           </div>
-          <ItemsTable items={items} />
+          <ItemsTable items={items} categories={categories} />
+
+          <p className='font-bold text-2xl mt-16 mb-2'>Categories:</p>
+          <CategoriesList categories={categories} />
         </div>
       </div>
     </>
@@ -51,7 +49,8 @@ export async function getServerSideProps(ctx) {
     ctx.res.end()
     return { props: {} }
   } else {
-    if (!adminusers.includes(session.user.email)) {
+    const isAdmin = process.env.ADMIN_USERS.split(',').includes(session.user.email)
+    if (!isAdmin) {
       ctx.res.setHeader("location", "/api/auth/signin")
       ctx.res.statusCode = 302
       ctx.res.end()
@@ -66,11 +65,15 @@ export async function getServerSideProps(ctx) {
     const items = await db
       .collection("items")
       .find({})
+      .sort({ key: 1 })
       .toArray()
 
     items.forEach(item => {
       const filtered = categories.filter(cat => (cat._id.toString() === item.category.toString()))
-      if (filtered?.length) item.categoryName = filtered[0].en
+      if (filtered?.length) {
+        item.categoryName = filtered[0].en
+        item.categorySlug = filtered[0].key
+      }
     })
 
     categories.forEach(category => {

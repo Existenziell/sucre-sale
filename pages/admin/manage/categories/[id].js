@@ -7,7 +7,6 @@ import { PulseLoader } from 'react-spinners'
 import { useRouter } from 'next/router'
 import { ObjectId } from 'mongodb'
 import { connectToDatabase } from "../../../../lib/mongodb"
-import { adminusers } from '../../../../lib/config'
 
 const Category = ({ category }) => {
   category = JSON.parse(category)
@@ -66,8 +65,12 @@ const Category = ({ category }) => {
         :
         <div className='px-4 md:px-8 pt-24 pb-8 min-h-[calc(100vh-48px)] text-left'>
           <BackBtn link='/admin/manage' />
-          <p>Id: <span>{category._id}</span></p>
-          <p>Key: <span className='whitespace-nowrap'>{category.key}</span></p>
+          <div className='text-center'>
+            <p className='text-4xl text-center'>Edit Category</p>
+            <p>Id: <span>{category._id}</span></p>
+            <p>Key: <span>{category.key}</span></p>
+          </div>
+
           <form onSubmit={saveEdits} className='mt-8'>
             <label htmlFor='english'>
               English
@@ -110,11 +113,11 @@ const Category = ({ category }) => {
               />
             </label>
 
-            <input type='submit' className='button button-sm mt-8 mr-2' value='Save' />
-            <Link href='/admin/manage/'><a>Cancel</a></Link>
+            <input type='submit' className='button button-sm mt-8 mr-4' value='Save' />
+            <Link href='/admin/manage/'><a className='textlink'>Cancel</a></Link>
           </form>
 
-          <button onClick={() => setShowDeleteModal(true)} className='text-red-600 mt-24'>Delete Category</button>
+          <button onClick={() => setShowDeleteModal(true)} className='text-gray-400 mt-24'>Delete Category</button>
         </div>
       }
 
@@ -145,7 +148,8 @@ export async function getServerSideProps(ctx) {
     ctx.res.end()
     return { props: {} }
   } else {
-    if (!adminusers.includes(session.user.email)) {
+    const isAdmin = process.env.ADMIN_USERS.split(',').includes(session.user.email)
+    if (!isAdmin) {
       ctx.res.setHeader("location", "/")
       ctx.res.statusCode = 302
       ctx.res.end()

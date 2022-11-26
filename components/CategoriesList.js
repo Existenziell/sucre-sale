@@ -5,7 +5,7 @@ export default function CategoriesList({ categories }) {
     <div className='text-sm flex justify-start flex-wrap gap-4 w-full mb-12'>
       {categories.map(cat => (
         <Link key={cat.key} href={`/admin/manage/categories/${cat._id}`}>
-          <a className='bg-white dark:bg-black px-4 py-3 rounded-sm block whitespace-nowrap min-w-[200px]'>
+          <a className='bg-white dark:bg-black px-4 py-3 rounded-sm block whitespace-nowrap min-w-[200px] hover:scale-[103%] transition-all duration-300'>
             <p className='text-lg mb-1'>{cat.en}</p>
             <p className='text-sm'>Key: {cat.key}</p>
             <p>Number of items: {cat.items.length}</p>

@@ -1,12 +1,9 @@
 import { getSession, signIn, signOut } from 'next-auth/client'
-import { connectToDatabase } from "../../lib/mongodb"
-import { adminusers } from '../../lib/config'
-import { ObjectId } from 'mongodb'
 import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 
-const Admin = ({ session }) => {
+const Admin = ({ session, isAdmin }) => {
   return (
     <>
       <Head>
@@ -35,7 +32,7 @@ const Admin = ({ session }) => {
                   />
                 </div>
 
-                {adminusers.includes(session.user.email) &&
+                {isAdmin &&
                   <Link href='/admin/manage'>
                     <a className='button flex h-max'>Manage Menu</a>
                   </Link>
@@ -68,24 +65,15 @@ const Admin = ({ session }) => {
 }
 
 export async function getServerSideProps(ctx) {
-  const { db } = await connectToDatabase()
   const session = await getSession(ctx)
-
   if (!session) {
     return { props: {} }
   } else {
-    const user = await db
-      .collection("users")
-      .findOne(ObjectId(session.user.id))
-
-    if (!adminusers.includes(session.user.email)) {
-      return { props: {} }
-    }
-
+    const isAdmin = process.env.ADMIN_USERS.split(',').includes(session.user.email)
     return {
       props: {
-        session: await getSession(ctx),
-        user: JSON.stringify(user)
+        session,
+        isAdmin
       }
     }
   }

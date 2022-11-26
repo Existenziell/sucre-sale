@@ -64,6 +64,10 @@ h1, h2 {
   @apply no-underline bg-brand rounded transition-all duration-500 text-white px-1;
 }
 
+.textlink {
+  @apply border-b border-transparent hover:border-b-gray-300 hover:text-brand cursor-pointer;
+}
+
 h1 {
   @apply text-4xl md:text-6xl mb-8 md:mb-12;
 }
@@ -91,11 +95,11 @@ h3 {
 }
 
 .menu-nav {
-  @apply border-b border-transparent hover:text-brand;
+  @apply border-b border-transparent hover:text-brand bg-white dark:text-brand-dark rounded px-3 py-2 cursor-pointer;
 }
 
 .active-menu-nav {
-  @apply border-b border-brand-dark dark:border-brand text-brand dark:text-white font-bold transition-all;
+  @apply bg-brand text-white  rounded px-3 py-2 font-bold transition-all;
 }
 
 
@@ -130,6 +134,15 @@ input[type='radio']:checked:after {
   background-color: var(--color-brand);
   border-color: white;
   outline: 2px solid #666;
+}
+
+
+/* ==========================================================================
+	Menu
+	========================================================================== */
+
+.menu-title {
+  @apply mx-auto w-max mt-10;
 }
 
 

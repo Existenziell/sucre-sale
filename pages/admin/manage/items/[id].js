@@ -8,7 +8,6 @@ import { PulseLoader } from 'react-spinners'
 import { useRouter } from 'next/router'
 import { ObjectId } from 'mongodb'
 import { connectToDatabase } from "../../../../lib/mongodb"
-import { adminusers } from '../../../../lib/config'
 
 const Item = ({ item, categories }) => {
   item = JSON.parse(item)
@@ -74,8 +73,11 @@ const Item = ({ item, categories }) => {
         :
         <div className='px-4 md:px-8 pt-24 pb-8 min-h-[calc(100vh-48px)] text-left'>
           <BackBtn link='/admin/manage' />
-          <p>Id: <span>{item._id}</span></p>
-          <p>Key: <span className='whitespace-nowrap'>{item.key}</span></p>
+          <div className='text-center'>
+            <p className='text-4xl'>Edit item</p>
+            <p>Id: <span>{item._id}</span></p>
+            <p>Key: <span>{item.key}</span></p>
+          </div>
           <form onSubmit={saveEdits} className='mt-8'>
             <label htmlFor='english'>
               English
@@ -124,13 +126,14 @@ const Item = ({ item, categories }) => {
               onChange={(e) => setCategory(e.value)}
               instanceId
               defaultValue={categoryOptions.filter(o => o.value.toString() === item.category.toString())}
-              disabled={loading}
+              // isDisabled={loading}
+              isDisabled={true}
             />
             <input type='submit' className='button button-sm mt-8 mr-4' value='Save' />
-            <Link href='/admin/manage/'><a>Cancel</a></Link>
+            <Link href='/admin/manage/'><a className='textlink'>Cancel</a></Link>
           </form>
 
-          <button onClick={() => setShowDeleteModal(true)} className='text-red-600 mt-24'>Delete Item</button>
+          <button onClick={() => setShowDeleteModal(true)} className='text-gray-400 mt-24'>Delete Item</button>
         </div>
       }
 
@@ -141,7 +144,7 @@ const Item = ({ item, categories }) => {
             <p className='text-sm mb-4'>This action cannot be undone!</p>
             <div className='flex gap-4 justify-center'>
               <button onClick={deleteItem} className='text-red-600 hover:underline'>Yes</button>
-              <p onClick={() => setShowDeleteModal(false)} className=' cursor-pointer hover:underline'>Cancel</p>
+              <p onClick={() => setShowDeleteModal(false)} className='cursor-pointer hover:underline'>Cancel</p>
             </div>
           </div>
         </div>
@@ -161,7 +164,8 @@ export async function getServerSideProps(ctx) {
     ctx.res.end()
     return { props: {} }
   } else {
-    if (!adminusers.includes(session.user.email)) {
+    const isAdmin = process.env.ADMIN_USERS.split(',').includes(session.user.email)
+    if (!isAdmin) {
       ctx.res.setHeader("location", "/")
       ctx.res.statusCode = 302
       ctx.res.end()
