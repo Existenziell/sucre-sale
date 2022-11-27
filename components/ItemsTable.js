@@ -24,13 +24,13 @@ export default function ItemsTable({ categories, items }) {
         ))}
       </div>
 
-      <table className='table-auto w-full bg-white dark:bg-black' cellPadding={10}>
+      <table className='table-auto w-full bg-white dark:bg-black'>
         <thead className='text-left'>
           <tr className='font-bold border-b-2 border-gray-200'>
-            <th className='pb-4'>Key</th>
-            <th className='pb-4'>EN</th>
-            <th className='pb-4'>ES</th>
-            <th className='pb-4'>Category</th>
+            <th className='px-2 py-4'>Key</th>
+            <th className='px-2 py-4'>EN</th>
+            <th className='px-2 py-4'>ES</th>
+            <th className='px-2 py-4'>Category</th>
           </tr>
         </thead>
         <tbody>
@@ -45,22 +45,22 @@ export default function ItemsTable({ categories, items }) {
             <tr key={item._id} className='outline outline-transparent hover:outline-brand hover:cursor-pointer'>
               <td className='whitespace-nowrap'>
                 <Link href={`/admin/manage/items/${item._id}`}>
-                  <a>{item.key}</a>
+                  <a className="w-full block px-2 py-2">{item.key}</a>
                 </Link>
               </td>
               <td className='max-w-[200px] truncate '>
                 <Link href={`/admin/manage/items/${item._id}`}>
-                  <a>{item.en}</a>
+                  <a className="w-full truncate block px-2 py-2">{item.en}</a>
                 </Link>
               </td>
               <td className='max-w-[200px] truncate '>
                 <Link href={`/admin/manage/items/${item._id}`}>
-                  <a>{item.es}</a>
+                  <a className="w-full truncate block px-2 py-2">{item.es}</a>
                 </Link>
               </td>
               <td className=''>
                 <Link href={`/admin/manage/items/${item._id}`}>
-                  <a>{item.categoryName}</a>
+                  <a className="w-full block px-2 py-2">{item.categoryName}</a>
                 </Link>
               </td>
             </tr>
