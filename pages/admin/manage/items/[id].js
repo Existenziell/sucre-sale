@@ -131,9 +131,10 @@ const Item = ({ item, categories }) => {
             />
             <input type='submit' className='button button-sm mt-8 mr-4' value='Save' />
             <Link href='/admin/manage/'><a className='textlink'>Cancel</a></Link>
+            <p className='mt-4 text-xs text-gray-500'>Changes will be visible after max. 1 hour</p>
           </form>
 
-          <button onClick={() => setShowDeleteModal(true)} className='text-gray-400 mt-24'>Delete Item</button>
+          {/* <button onClick={() => setShowDeleteModal(true)} className='text-gray-500 mt-24'>Delete Item</button> */}
         </div>
       }
 
