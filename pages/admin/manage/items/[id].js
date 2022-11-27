@@ -74,11 +74,13 @@ const Item = ({ item, categories }) => {
         <div className='px-4 md:px-8 pt-24 pb-8 min-h-[calc(100vh-48px)] text-left'>
           <BackBtn link='/admin/manage' />
           <div className='text-center'>
-            <p className='text-4xl'>Edit item</p>
-            <p>Id: <span>{item._id}</span></p>
-            <p>Key: <span>{item.key}</span></p>
+            <p className='text-4xl mb-4'>Edit item</p>
+            <div className='text-gray-500 text-sm'>
+              <p>ID: <span>{item._id}</span></p>
+              <p>Key: <span>{item.key}</span></p>
+            </div>
           </div>
-          <form onSubmit={saveEdits} className='mt-8'>
+          <form onSubmit={saveEdits} className='mt-8 border border-gray-500 rounded p-4'>
             <label htmlFor='english'>
               English
               <input
@@ -131,9 +133,9 @@ const Item = ({ item, categories }) => {
             />
             <input type='submit' className='button button-sm mt-8 mr-4' value='Save' />
             <Link href='/admin/manage/'><a className='textlink'>Cancel</a></Link>
-            <p className='mt-4 text-xs text-gray-500'>Changes will be visible after max. 1 hour</p>
           </form>
 
+          <p className='mt-4 text-xs text-gray-500'>Changes will be visible after max. 1 hour</p>
           {/* <button onClick={() => setShowDeleteModal(true)} className='text-gray-500 mt-24'>Delete Item</button> */}
         </div>
       }
