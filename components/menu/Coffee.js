@@ -25,21 +25,21 @@ const Coffee = ({ i18n }) => {
 
           <h2 className='border-b border-slate-400'>{i18n.E0}</h2>
           <ul className='list-disc pl-4 w-full'>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E01}</span><h3>{i18n.E01P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E02}</span><h3>{i18n.E02P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E03}</span><h3>{i18n.E03P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E04}</span><h3>{i18n.E04P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E05}</span><h3>{i18n.E05P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E06}</span><h3>{i18n.E06P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E07}</span><h3>{i18n.E07P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E08}</span><h3>{i18n.E08P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E10}</span><h3>{i18n.E10P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E09}</span><h3>{i18n.E09P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E11}</span><h3>{i18n.E11P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E12}</span><h3>{i18n.E12P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E13}</span><h3>{i18n.E13P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E14}</span><h3>{i18n.E14P}</h3></li>
-            <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.E15}</span><h3>{i18n.E15P}</h3></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E01}</span><span>{i18n.E01P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E02}</span><span>{i18n.E02P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E03}</span><span>{i18n.E03P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E04}</span><span>{i18n.E04P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E05}</span><span>{i18n.E05P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E06}</span><span>{i18n.E06P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E07}</span><span>{i18n.E07P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E08}</span><span>{i18n.E08P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E10}</span><span>{i18n.E10P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E09}</span><span>{i18n.E09P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E11}</span><span>{i18n.E11P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E12}</span><span>{i18n.E12P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E13}</span><span>{i18n.E13P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E14}</span><span>{i18n.E14P}</span></li>
+            <li className='flex items-center justify-between w-full mb-2'><span className='list-item'>{i18n.E15}</span><span>{i18n.E15P}</span></li>
           </ul>
         </div>
         <div><img src='/menu/coffee1.jpg' alt={i18n.title} className='rounded shadow md:mx-0 max-h-80' /></div>

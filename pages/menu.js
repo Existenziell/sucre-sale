@@ -27,8 +27,8 @@ const Menu = ({ i18nStatic, i18n }) => {
       <div className='w-full px-8 py-24'>
 
         <div className='flex flex-col justify-center'>
-          <h1>{i18nStatic.menu.M1}</h1>
-          <p className='max-w-lg mx-auto mb-8'>{i18nStatic.menu.M2b}</p>
+          <h1 className='mb-2'>{i18nStatic.menu.M1}</h1>
+          <p className='max-w-lg mx-auto mb-10'>{i18nStatic.menu.M2a}</p>
         </div>
 
         <div className='flex flex-col items-start justify-center mx-auto text-left max-w-4xl'>
