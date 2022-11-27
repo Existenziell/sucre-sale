@@ -28,8 +28,8 @@ export default function ItemsTable({ categories, items }) {
         <thead className='text-left'>
           <tr className='font-bold border-b-2 border-gray-200'>
             <th className='px-2 py-4'>Key</th>
-            <th className='px-2 py-4'>EN</th>
-            <th className='px-2 py-4'>ES</th>
+            <th className='px-2 py-4'>English</th>
+            <th className='px-2 py-4'>Español</th>
             <th className='px-2 py-4'>Category</th>
           </tr>
         </thead>
