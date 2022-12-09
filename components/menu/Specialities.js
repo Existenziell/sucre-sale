@@ -3,6 +3,29 @@ const Specialities = ({ i18n }) => {
     <>
       <h1 className='menu-title'>{i18n.title}</h1>
 
+      <div className="bg-gray-100 px-6 py-4 rounded mb-6">
+        <div className='flex items-start justify-between mb-2'>
+          <div>
+            <h3 className="whitespace-nowrap mb-0">{i18n.T00S0}</h3>
+            <p>{i18n.T00S1}</p>
+          </div>
+          <h3>{i18n.T00S0P}</h3>
+        </div>
+        <div className='flex items-start justify-between mb-2'>
+          <div>
+            <h3 className="whitespace-nowrap">{i18n.T00S2}</h3>
+            <p>{i18n.T00S3}</p>
+          </div>
+          <h3>{i18n.T00S2P}</h3>
+        </div>
+        <div className='flex items-start justify-between mb-2'>
+          <div>
+            <h3 className="whitespace-nowrap">{i18n.T00S4}</h3>
+            <p>{i18n.T00S5}</p>
+          </div>
+          <h3>{i18n.T00S5P}</h3>
+        </div>
+      </div>
       <div className='flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-center items-center mb-8'>
         <div><img src='/menu/specialities.jpg' alt='Specialities' className='rounded shadow md:mx-0 max-h-80' /></div>
         <div>

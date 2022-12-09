@@ -145,6 +145,10 @@ input[type='radio']:checked:after {
   @apply mx-auto w-max mt-10;
 }
 
+.menu-category {
+  @apply w-full shadow-2xl bg-white dark:bg-brand/10 px-6 py-2 rounded mb-8;
+}
+
 
 /* ==========================================================================
 	Mapbox overrides
