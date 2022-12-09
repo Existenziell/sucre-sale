@@ -139,6 +139,14 @@ const Coffee = ({ i18n }) => {
             <h3>{i18n.T28P}</h3>
           </div>
 
+          <div className='flex items-center justify-between mt-4'>
+            <h3>{i18n.T29}</h3>
+            <h3>{i18n.T29P}</h3>
+          </div>
+          <div className='flex items-center justify-between mt-4'>
+            <h3>{i18n.T30}</h3>
+            <h3>{i18n.T30P}</h3>
+          </div>
         </div>
         <div><img src='/menu/pecan.jpg' alt={i18n.title} className='rounded shadow md:mx-0 max-h-80' /></div>
 
