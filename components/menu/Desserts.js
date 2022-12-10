@@ -65,6 +65,11 @@ const Desserts = ({ i18n }) => {
             <h3>{i18n.T15P}</h3>
           </div>
           <p>{i18n.T16}</p>
+
+          <div className='flex items-center justify-between mt-4'>
+            <h3>{i18n.T17}</h3>
+            <h3>{i18n.T17P}</h3>
+          </div>
         </div>
 
       </div>
