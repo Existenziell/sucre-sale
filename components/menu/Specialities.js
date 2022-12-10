@@ -3,7 +3,7 @@ const Specialities = ({ i18n }) => {
     <>
       <h1 className='menu-title'>{i18n.title}</h1>
 
-      <div className="bg-gray-100 px-6 py-4 rounded mb-6">
+      <div className="bg-gray-100 dark:bg-gray-800 px-6 py-4 rounded mb-6">
         <div className='flex items-start justify-between mb-2'>
           <div>
             <h3 className="whitespace-nowrap mb-0">{i18n.T00S0}</h3>

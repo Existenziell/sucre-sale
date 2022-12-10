@@ -56,6 +56,7 @@ const Breakfast = ({ i18n }) => {
         <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.T21}</span><h3>{i18n.T21P}</h3></li>
         <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.T22}</span><h3>{i18n.T22P}</h3></li>
         <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.T23}</span><h3>{i18n.T23P}</h3></li>
+        <li className='flex items-center justify-between w-full'><span className='list-item'>{i18n.T24}</span><h3>{i18n.T24P}</h3></li>
       </ul>
     </>
   )
